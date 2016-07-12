@@ -1,5 +1,7 @@
 var webpack = require('webpack'),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
+	CleanWebpackPlugin = require('clean-webpack-plugin'),
+	LiverReloadPlugin = require('webpack-livereload-plugin'),
 	path = require('path');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -22,7 +24,7 @@ module.exports = {
 		loaders: [
 			{test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'ng-annotate!babel?presets[]=es2015'},
 			{test: /\.html$/, loader: 'ngtemplate!html'},
-			{test: /\.jade$/, loader: 'ngtemplate!html!apply!jade'},	//'ngtemplate!html!apply!jade', 'ngtemplate!html!jade', 'ngtemplate!html!apply!jade-html-loader'
+			{test: /\.jade$/, loader: 'jade'},	//'ngtemplate!html!apply!jade', 'ngtemplate!html!jade', 'ngtemplate!html!apply!jade-html-loader'
 			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css')},
 			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!stylus?resolve url')},
 			{test: /\.png$/, loader: 'url?limit=100000'},
@@ -41,7 +43,10 @@ module.exports = {
 			jQuery: 'jquery',
 			"window.jQuery": 'jquery'
 		}),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
+		new LiverReloadPlugin({
+			port: 8080
+		})
 	],
 	devtool: NODE_ENV === 'development' ? 'source-map' : null,
 	noParse: [
@@ -53,12 +58,23 @@ module.exports = {
 	]
 };
 
-if(NODE_ENV === 'production') {
-	module.exports.plugins.push(
-		new webpack.optimize.UglifyJsPlugin({
-			warnings: false,
-			drop_console: true,
-			unsafe: true
-		})
-	);
-}
+switch(NODE_ENV) {
+	case 'production':
+		module.exports.plugins.push(
+			new webpack.optimize.UglifyJsPlugin({
+				warnings: false,
+				drop_console: true,
+				unsafe: true
+			})
+		);
+		break
+	case 'clearBuild':
+		module.exports.plugins.push(
+			new CleanWebpackPlugin(['build'], {
+				root: path.resolve(__dirname, './public'),
+				verbose: true,
+				dry: false
+			})
+		);
+		break;
+};
