@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<title>Nanocoding blog</title>
@@ -15,13 +15,17 @@
 		</header>
 		<hr>
 		<ul class="main-nav nav nav-pills">
-			<li><a href="">Item</a></li>
-			<li><a href="">Item</a></li>
-			<li><a href="">Item</a></li>
-			<li><a href="">Item</a></li>
+			<li><a href="" ui-sref='home'>Item</a></li>
+			<li><a href="" ui-sref='home'>Item</a></li>
+			<li><a href="" ui-sref='home'>Item</a></li>
+			<li><a href="" ui-sref='home'>Item</a></li>
 		</ul>
 		<hr>
 	</div>
+	<div class="container">
+		<ui-view></ui-view>
+	</div>
 	<script src="/build/app.js"></script>
+	<script src="http://localhost:8080/livereload.js"></script>
 </body>
 </html>
