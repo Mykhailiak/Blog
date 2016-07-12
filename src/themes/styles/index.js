@@ -1,1 +1,3 @@
-import './style.styl'
+import './common.js';
+
+import './style.styl';

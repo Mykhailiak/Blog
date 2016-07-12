@@ -23,7 +23,7 @@ module.exports = {
 			{test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'ng-annotate!babel?presets[]=es2015'},
 			{test: /\.html$/, loader: 'ngtemplate!html'},
 			{test: /\.jade$/, loader: 'ngtemplate!html!apply!jade'},	//'ngtemplate!html!apply!jade', 'ngtemplate!html!jade', 'ngtemplate!html!apply!jade-html-loader'
-			{test: /\.css$/, loader: 'style!css'},
+			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css')},
 			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!stylus?resolve url')},
 			{test: /\.png$/, loader: 'url?limit=100000'},
 			{test: /\.gif$/, loader: 'url?limit=10000'},
