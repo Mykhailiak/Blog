@@ -1,3 +1,4 @@
 {
-	"backEndUr": "http://path_to_backend/"
+	"backEndUr": "http://path_to_backend/",
+	"roles": ["User", "Admin"]
 }

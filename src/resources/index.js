@@ -1,1 +1,3 @@
 import './module';
+
+import './users';

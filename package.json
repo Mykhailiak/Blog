@@ -23,7 +23,8 @@
     "bootstrap.css": "./bower_components/bootstrap/dist/css/bootstrap.min.css",
     "angular-busy-js": "./bower_components/angular-busy/angular-busy.js",
     "angular-busy.css": "./bower_components/angular-busy/angular-busy.css",
-    "font-awesome.css": "./bower_components/font-awesome/css/font-awesome.min.css"
+    "font-awesome.css": "./bower_components/font-awesome/css/font-awesome.min.css",
+    "angular-messages": "./bower_components/angular-messages/angular-messages.min.js"
   },
   "devDependencies": {
     "apply-loader": "^0.1.0",

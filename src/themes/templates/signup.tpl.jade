@@ -1,0 +1,34 @@
+.row
+	.col-md-6.col-md-offset-3
+		hr
+		h3.text-center.text-capitalize Sign up
+		hr
+		form(name="signUpForm", novalidate, ng-submit="createUser(newUser, signUpForm.$valid)")
+			.form-group
+				label(for="newUserName") Name
+				input(type="text" name="name" ng-model="newUser.name" id="newUserName" placeholder="Name" minlength="3" required).form-control
+				div.error-box-form(ng-show="signUpForm.name.$dirty && signUpForm.name.$invalid" ng-messages="signUpForm.name.$error")
+					p.text-danger(ng-message="required") Please enter a value for this field.
+					p.text-danger(ng-message="minlength") Password must be more 3 characters
+					hr
+			.form-group
+				label(for="newUserEmail") Email
+				input(type="email" name="email" ng-model="newUser.email" id="newUserEmail" placeholder="Email" required).form-control
+				div.error-box-form(ng-show="signUpForm.email.$dirty && signUpForm.email.$invalid" ng-messages="signUpForm.email.$error")
+					p.text-danger(ng-message="required") Please enter a value for this field.
+					p.text-danger(ng-message="email") This field must be a valid email address.
+					hr
+			.form-group
+				label(for="newUserPassword") Password
+				input(type="password" name="password" ng-model="newUser.password" id="newUserPassword" placeholder="Password" minlength="3" required).form-control
+				div.error-box-form(ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid" ng-messages="signUpForm.name.$error")
+					p.text-danger(ng-message="required") Please enter a value for this field.
+					p.text-danger(ng-message="minlength") Password must be more 3 characters
+					hr
+			.form-group
+				label(for="newUserRole") Role
+				select(ng-model="newUser.role" name="role" ng-options="role for role in rolesList track by role" required).form-control
+				div.error-box-form(ng-show="signUpForm.role.$dirty && signUpForm.role.$invalid" ng-messages="signUpForm.name.$error")
+					p.text-danger(ng-message="required") Please enter a value for this field.
+			hr
+			button.btn.btn-primary(ng-disabled="signUpForm.$invalid") Sign up
