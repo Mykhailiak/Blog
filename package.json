@@ -2,20 +2,35 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=development webpack --watch",
     "production": "NODE_ENV=production webpack",
-    "server": "webpack-dev-server --content-base public -ebug --output-pathinfo --colors --devtool source-map --port 5001"
+    "server": "webpack-dev-server --content-base public -ebug --output-pathinfo --colors --devtool source-map --port 5001",
+    "clearBuild": "NODE_ENV=cleanBuild webpack --watch"
   },
   "author": "",
   "license": "ISC",
+  "browser": {
+    "angular-ui-router": "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
+    "angular-resource": "./bower_components/angular-resource/angular-resource.min.js",
+    "ui-bootstrap": "./bower_components/angular-bootstrap/ui-bootstrap.js",
+    "ui-bootstrap.css": "./bower_components/angular-bootstrap/ui-bootstrap-csp.css",
+    "ui-bootstrap-js": "./bower_components/angular-bootstrap/ui-bootstrap.js",
+    "ui-bootstrap-tpls-js": "./bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+    "bootstrap-js": "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+    "bootstrap.css": "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+    "angular-busy-js": "./bower_components/angular-busy/angular-busy.js",
+    "angular-busy.css": "./bower_components/angular-busy/angular-busy.css",
+    "font-awesome.css": "./bower_components/font-awesome/css/font-awesome.min.css"
+  },
   "devDependencies": {
     "apply-loader": "^0.1.0",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
+    "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -34,7 +49,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-livereload-plugin": "^0.8.1"
   },
   "dependencies": {
     "angular": "^1.5.7"
