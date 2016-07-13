@@ -11,10 +11,10 @@ app.controller('SignUpCtrl', ($scope, Users, roles, $state) => {
 				email: newUser.email,
 				password: newUser.password,
 				role: newUser.role
-			}, (res) => {
-				if(res.code === 200) {
-					$state.go('home');
-				}
+			}).$promise.then((res) => {
+				console.log(res);
+			}, (err) => {
+				console.log(err);
 			});
 		}
 	}
