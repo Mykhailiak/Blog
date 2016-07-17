@@ -2,6 +2,7 @@ var webpack = require('webpack'),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	CleanWebpackPlugin = require('clean-webpack-plugin'),
 	LiverReloadPlugin = require('webpack-livereload-plugin'),
+	autoprefixer = require('autoprefixer'),
 	path = require('path');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -25,13 +26,16 @@ module.exports = {
 			{test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'ng-annotate!babel?presets[]=es2015'},
 			{test: /\.html$/, loader: 'ngtemplate!html'},
 			{test: /\.jade$/, loader: 'jade'},	//'ngtemplate!html!apply!jade', 'ngtemplate!html!jade', 'ngtemplate!html!apply!jade-html-loader'
-			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css')},
-			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!stylus?resolve url')},
+			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css!postcss')},
+			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!postcss!stylus?resolve url')},
 			{test: /\.png$/, loader: 'url?limit=100000'},
 			{test: /\.gif$/, loader: 'url?limit=10000'},
 			{test: /\.json$/, loader: 'json'},
 			{test: /\.(jpg|woff|woff2|eot|svg|ttf)(\?.*)?$/, loader: 'file'}
 		]
+	},
+	postcss: function () {
+		return [autoprefixer({browsers: ['last 3 version']})];
 	},
 	plugins: [
 		new ExtractTextPlugin('styles.css', {allChunks: true}),
