@@ -2,6 +2,7 @@ var webpack = require('webpack'),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	CleanWebpackPlugin = require('clean-webpack-plugin'),
 	LiverReloadPlugin = require('webpack-livereload-plugin'),
+	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 	autoprefixer = require('autoprefixer'),
 	path = require('path');
 
@@ -48,6 +49,7 @@ module.exports = {
 			"window.jQuery": 'jquery'
 		}),
 		new webpack.NoErrorsPlugin(),
+		new WebpackBuildNotifierPlugin(),
 		new LiverReloadPlugin({
 			port: 8080
 		})
@@ -71,7 +73,7 @@ switch(NODE_ENV) {
 				unsafe: true
 			})
 		);
-		break
+		break;
 	case 'clearBuild':
 		module.exports.plugins.push(
 			new CleanWebpackPlugin(['build'], {
