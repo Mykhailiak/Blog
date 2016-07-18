@@ -24,11 +24,5 @@
 				div.error-box-form(ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid" ng-messages="signUpForm.name.$error")
 					p.text-danger(ng-message="required") Please enter a value for this field.
 					p.text-danger(ng-message="minlength") Password must be more 3 characters
-					hr
-			.form-group
-				label(for="newUserRole") Role
-				select(ng-model="newUser.role" name="role" ng-options="role for role in rolesList track by role" required).form-control
-				div.error-box-form(ng-show="signUpForm.role.$dirty && signUpForm.role.$invalid" ng-messages="signUpForm.name.$error")
-					p.text-danger(ng-message="required") Please enter a value for this field.
 			hr
 			button.btn.btn-primary(ng-disabled="signUpForm.$invalid") Sign up

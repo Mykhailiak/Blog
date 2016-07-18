@@ -1,8 +1,7 @@
 import app from './../application';
 
 
-app.controller('SignUpCtrl', ($scope, Users, roles, $state) => {
-	$scope.rolesList = roles;
+app.controller('SignUpCtrl', ($scope, Users, $state) => {
 
 	$scope.createUser = (newUser, status) => {
 		if(status) {
@@ -10,7 +9,7 @@ app.controller('SignUpCtrl', ($scope, Users, roles, $state) => {
 				name: newUser.name,
 				email: newUser.email,
 				password: newUser.password,
-				role: newUser.role
+				role: 'user'
 			}).$promise.then((res) => {
 				console.log(res);
 			}, (err) => {
