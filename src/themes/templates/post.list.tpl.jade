@@ -12,4 +12,4 @@ ul.posts-list.list-group
 				ul.list-inline
 					//- ng-repeat="tag in post.tags"
 					li(ng-repeat="tag in ['awesome', 'post', 'detail'] ")
-						a.label.label-info(ng-cloak) {{tag}} 
+						a.label.label-info(ng-bind="tag")
