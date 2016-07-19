@@ -3,6 +3,8 @@ import app from './../application';
 import homeTpl from './../themes/templates/home.tpl.jade';
 import signUpTpl from './../themes/templates/signup.tpl.jade';
 import signInTpl from './../themes/templates/signin.tpl.jade';
+import accountTpl from './../themes/templates/accout.tpl.jade';
+
 
 app.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
@@ -21,5 +23,10 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			url: '/signIn',
 			controller: 'SignInCtrl',
 			template: signInTpl()
+		})
+		.state('account', {
+			url: '/accout/:id',
+			controller: 'AccountCtrl',
+			template: accountTpl()
 		})
 });
