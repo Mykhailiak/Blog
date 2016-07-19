@@ -1,0 +1,6 @@
+ul.users-list
+	li(ng-repeat="user in users")
+		article.panel.panel-default
+			div.panel-heading(ng-bind="user.role")
+			div.panel-body
+				a(ng-bind="user.name" ui-sref="account({id: user._id})")
