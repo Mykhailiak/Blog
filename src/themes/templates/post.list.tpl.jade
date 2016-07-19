@@ -1,0 +1,15 @@
+ul.posts-list.list-group
+	li.list-group-item.pre-post-list-group-item(ng-repeat="post in posts | limitTo : 5")
+		div.panel.post-pre-panel
+			.panel-heading
+				h4(ng-bind="post.title")
+				span.text-info(ng-bind="post.created | date")
+			.panel-body(ng-bind="post.text")
+			.panel-footer.pre-post-f-pannel
+				span.author-post
+					i.fa.fa-user.text-info
+					a.text-info(ng-bind-template="@{{post.author}}")
+				ul.list-inline
+					//- ng-repeat="tag in post.tags"
+					li(ng-repeat="tag in ['awesome', 'post', 'detail'] ")
+						a.label.label-info(ng-cloak) {{tag}} 
