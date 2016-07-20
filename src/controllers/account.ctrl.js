@@ -7,4 +7,9 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users) => {
 	}, (err) => {
 		console.error(err);
 	});
+	Users.query().$promise.then((data) => {
+		$scope.users = data;
+	}, (err) => {
+		console.error(err);
+	});
 });
