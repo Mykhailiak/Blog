@@ -16,7 +16,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './public/build/'),
 		filename: '[name].js',
-		publicPath: '/build/'
+		publicPath: '/assets/'
 	},
 	resolve: {
 		root: [path.resolve(__dirname, './src/')],
