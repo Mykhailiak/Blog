@@ -8,12 +8,12 @@
 				label(for="userName" translate="NAME")
 				input(type="text" name="name" ng-model="user.name" id="userName" placeholder=" {{'NAME' | translate}} " required).form-control
 				div.error-box-form(ng-show="signInForm.name.$dirty && signInForm.name.$invalid" ng-messages="signInForm.name.$error")
-					p.text-danger(ng-message="required" translate="REQUIRED_MESS")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
 					hr
 			.form-group
 				label(for="userPassword" translate="PASSWORD")
 				input(type="password" name="password" ng-model="user.password" id="userPassword" placeholder=" {{'PASSWORD' | translate}} " required).form-control
-				div.error-box-form(ng-show="signInForm.password.$dirty && signInForm.password.$invalid" ng-messages="signInForm.name.$error")
-					p.text-danger(ng-message="required" translate="REQUIRED_MESS")
+				div.error-box-form(ng-show="signInForm.password.$dirty && signInForm.password.$invalid" ng-messages="signInForm.password.$error")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
 			hr
 			button.btn.btn-primary(ng-disabled="signInForm.$invalid" translate="SIGN.SIGN_IN")
