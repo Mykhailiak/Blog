@@ -6,34 +6,7 @@
 	<link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-	<div class="container">
-		<header class="main-header page-header">
-			<a href="" ui-sref="home" class="logo">
-				<img src="images/airplane.svg" alt="">
-				<h2>AirBlog</h2>
-			</a>
-			<ul class="list-inline">
-				<li><a href="" ui-sref="signIn" class="btn btn-info">Sign in</a></li>
-				<li><a href="" ui-sref="signUp" class="btn btn-info">Sign up</a></li>
-			</ul>
-		</header>
-		<hr>
-		<ul class="main-nav nav nav-pills">
-			<li><a href="" ui-sref="home">Home</a></li>
-			<li><a href="" ui-sref="home">Item</a></li>
-			<li><a href="" ui-sref="home">Item</a></li>
-			<li><a href="" ui-sref="home">Item</a></li>
-		</ul>
-		<hr>
-	</div>
-	<div class="container">
-		<ui-view></ui-view>
-	</div>
-	<div class="container">
-		<footer>
-			<hr>
-		</footer>
-	</div>
+	<ui-view></ui-view>
 	<script src="/assets/app.js"></script>
 	<script src="http://localhost:8080/livereload.js"></script>
 </body>

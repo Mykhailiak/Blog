@@ -1,6 +1,6 @@
 import app from './../application';
 
-app.controller('MainCtrl', ($scope, Users, Posts) => {
+app.controller('HomeCtrl', ($scope, Users, Posts) => {
 	Users.query().$promise.then((data) => {
 		$scope.users = data;
 	}, (err) => {

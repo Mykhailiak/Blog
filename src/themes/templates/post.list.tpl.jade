@@ -2,7 +2,7 @@ ul.posts-list.list-group
 	li.list-group-item.pre-post-list-group-item(ng-repeat="post in posts | limitTo : 5 | orderBy : 'created' : true")
 		div.panel.post-pre-panel
 			.panel-heading
-				h4: a(ng-bind="post.title", ui-sref="post({id: post._id})")
+				h4: a(ng-bind="post.title", ui-sref="root.post({id: post._id})")
 				span.text-info(ng-bind="post.created | date")
 			.panel-body(ng-bind="post.text | truncate : 150")
 			.panel-footer.pre-post-f-pannel

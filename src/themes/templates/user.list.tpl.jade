@@ -3,5 +3,5 @@ ul.users-list.list-group
 		article.panel.panel-default.user-item-panel
 			div.panel-heading(ng-bind-template="Role - {{user.role}}")
 			div.panel-body.user-item-panel-body
-				a(ng-bind="user.name" ui-sref="account({id: user._id})")
+				a(ng-bind="user.name" ui-sref="root.account({id: user._id})")
 				a(ng-bind="user.email" ng-href="mailto:{{user.email}}")

@@ -6,7 +6,7 @@
 		hr
 		span.text-info.visible-lg-block(ng-bind="post.created | date")
 		span.text-muted Posted by 
-			a(ng-bind-template="@{{post.author}}" ui-sref="account({id: post.author.id})")
+			a(ng-bind-template="@{{post.author}}" ui-sref="root.account({id: post.author.id})")
 		hr
 		p(ng-bind="post.text")
 		hr

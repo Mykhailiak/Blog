@@ -9,4 +9,6 @@ export default angular.module('app', [
 	'ui.bootstrap',
 	'ngMessages',
 	'pascalprecht.translate'
-	]);
+	]).run(($state) => {
+		$state.go('root.home');
+	});

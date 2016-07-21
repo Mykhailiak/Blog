@@ -5,33 +5,40 @@ import signUpTpl from './../themes/templates/signup.tpl.jade';
 import signInTpl from './../themes/templates/signin.tpl.jade';
 import accountTpl from './../themes/templates/accout.tpl.jade';
 import postTpl from './../themes/templates/post.tpl.jade';
+import appTpl from './../themes/templates/application.tpl.jade';
 
 
 app.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
-		.state('home', {
+		.state('root', {
 			url: '/',
 			controller: 'MainCtrl',
+			template: appTpl(),
+			redirectTo: 'root.home'
+		})
+		.state('root.home', {
+			url: 'home',
+			controller: 'HomeCtrl',
 			template: homeTpl()
 		})
-		.state('signUp', {
-			url: '/signUp',
+		.state('root.signUp', {
+			url: 'signUp',
 			controller: 'SignUpCtrl',
 			template: signUpTpl()
 		})
-		.state('signIn', {
-			url: '/signIn',
+		.state('root.signIn', {
+			url: 'signIn',
 			controller: 'SignInCtrl',
 			template: signInTpl()
 		})
-		.state('account', {
-			url: '/accout/:id',
+		.state('root.account', {
+			url: 'accout/:id',
 			controller: 'AccountCtrl',
 			template: accountTpl()
 		})
-		.state('post', {
-			url: '/post/:id',
+		.state('root.post', {
+			url: 'post/:id',
 			controller: 'PostCtrl',
 			template: postTpl()
 		})

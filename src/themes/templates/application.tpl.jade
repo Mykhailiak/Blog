@@ -1,0 +1,26 @@
+.container
+	header.main-header.page-header
+		a.logo(href='', ui-sref='root.home')
+			img(src='images/airplane.svg', alt='')
+			h2 AirBlog
+		ul.list-inline
+			li
+				a.btn.btn-info(href='', ui-sref='root.signIn') Sign in
+			li
+				a.btn.btn-info(href='', ui-sref='root.signUp') Sign up
+	hr
+	ul.main-nav.nav.nav-pills
+		li(ui-sref-active="active")
+			a(href='', ui-sref='root.home') Home
+		li(ui-sref-active="active")
+			a(href='', ui-sref='root.users') Users
+		li(ui-sref-active="active")
+			a(href='', ui-sref='root.posts') Posts
+		li(ui-sref-active="active")
+			a(href='', ui-sref='root.maps') Google Maps
+	hr
+.container
+	ui-view
+.container
+	footer
+		hr
