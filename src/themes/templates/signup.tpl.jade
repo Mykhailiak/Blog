@@ -9,7 +9,7 @@
 				input(type="text" name="name" ng-model="newUser.name" id="newUserName" placeholder=" {{'NAME' | translate}} " minlength="3" required).form-control
 				div.error-box-form(ng-show="signUpForm.name.$dirty && signUpForm.name.$invalid" ng-messages="signUpForm.name.$error")
 					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH_NAME" translate-values="{length: '3'}")
+					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{length: '3'}")
 					hr
 			.form-group
 				label(for="newUserEmail") Email
@@ -23,6 +23,6 @@
 				input(type="password" name="password" ng-model="newUser.password" id="newUserPassword" placeholder="Password" minlength="3" required).form-control
 				div.error-box-form(ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid" ng-messages="signUpForm.password.$error")
 					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH_PASS" translate-values="{length: '3'}")
+					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{length: '3'}")
 			hr
 			button.btn.btn-primary(ng-disabled="signUpForm.$invalid" translate="SIGN.SIGN_UP")

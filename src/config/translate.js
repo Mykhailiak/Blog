@@ -15,8 +15,7 @@ app.config(($translateProvider) => {
 		},
 		WARNS: {
 			REQUIRED_MESS: 'Це поле обов\'язкове',
-			MIN_LENGTH_PASS: 'Пароль має бути більше ніж {{length}} символи',
-			MIN_LENGTH_NAME: 'Ім\'я має бути більше ніж {{length}} символи',
+			MIN_LENGTH: 'Це поле має мати більше ніж {{length}} символи',
 			EMAIL_MESS: 'Це поле має бути email\'ом'
 		},
 		NAVIGATION: {
@@ -41,7 +40,7 @@ app.config(($translateProvider) => {
 		},
 		WARNS: {
 			REQUIRED_MESS: 'This field is required',
-			MIN_LENGTH_PASS: 'This field must have more than 3 characters',
+			MIN_LENGTH: 'This field must have more than {{length}} characters',
 			EMAIL_MESS: 'This field should be an e-mail'
 		},
 		NAVIGATION: {
