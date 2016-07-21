@@ -1,5 +1,5 @@
 ul.posts-list.list-group
-	li.list-group-item.pre-post-list-group-item(ng-repeat="post in posts | limitTo : 5")
+	li.list-group-item.pre-post-list-group-item(ng-repeat="post in posts | limitTo : 5 | orderBy : 'created' : true")
 		div.panel.post-pre-panel
 			.panel-heading
 				h4: a(ng-bind="post.title", ui-sref="post({id: post._id})")

@@ -1,5 +1,5 @@
 ul.users-list.list-group
-	li.list-group-item.user-list-group-item(ng-repeat="user in users | limitTo : 5")
+	li.list-group-item.user-list-group-item(ng-repeat="user in users | limitTo : 5 | orderBy : 'created' : true")
 		article.panel.panel-default.user-item-panel
 			div.panel-heading(ng-bind-template="Role - {{user.role}}")
 			div.panel-body.user-item-panel-body
