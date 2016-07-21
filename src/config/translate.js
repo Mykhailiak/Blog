@@ -34,6 +34,31 @@ app.config(($translateProvider) => {
 		PASSWORD: 'Пароль',
 	});
 
+	$translateProvider.translations('en', {
+		SIGN: {
+			SIGN_IN: 'Sign in',
+			SIGN_UP: 'Sign up'
+		},
+		WARNS: {
+			REQUIRED_MESS: 'This field is required',
+			MIN_LENGTH_PASS: 'This field must have more than 3 characters',
+			EMAIL_MESS: 'This field should be an e-mail'
+		},
+		NAVIGATION: {
+			HOME: 'Home',
+			USERS: 'Users',
+			POSTS: 'Posts',
+			GOOGLE_MAPS: 'Map'
+		},
+		WRITE_POST: 'Write post text',
+		POST: 'Post',
+		USERS: 'Users',
+		RECENT_POST: 'Recent posts',
+		POSTED_BY: 'Posted by',
+		NAME: 'Name',
+		PASSWORD: 'Password',
+	});
+
 	$translateProvider.preferredLanguage('ua');
 
 });
