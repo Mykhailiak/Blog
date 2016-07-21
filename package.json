@@ -24,7 +24,10 @@
     "angular-busy-js": "./bower_components/angular-busy/angular-busy.js",
     "angular-busy.css": "./bower_components/angular-busy/angular-busy.css",
     "font-awesome.css": "./bower_components/font-awesome/css/font-awesome.min.css",
-    "angular-messages": "./bower_components/angular-messages/angular-messages.min.js"
+    "angular-messages": "./bower_components/angular-messages/angular-messages.min.js",
+    "angular-translate": "./bower_components/angular-translate/angular-translate.min.js",
+    "angular-translate-loader": "./bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+
   },
   "devDependencies": {
     "apply-loader": "^0.1.0",

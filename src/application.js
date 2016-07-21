@@ -7,5 +7,6 @@ export default angular.module('app', [
 	'app.resources',
 	'cgBusy',
 	'ui.bootstrap',
-	'ngMessages'
+	'ngMessages',
+	'pascalprecht.translate'
 	]);

@@ -5,4 +5,6 @@ import 'ui-bootstrap-js';
 import 'ui-bootstrap-tpls-js'
 import 'angular-busy-js';
 import 'angular-messages';
+import 'angular-translate';
+import 'angular-translate-loader';
 import './resources/';
