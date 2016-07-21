@@ -5,24 +5,24 @@
 		hr
 		form(name="signUpForm", novalidate, ng-submit="createUser(newUser, signUpForm.$valid)")
 			.form-group
-				label(for="newUserName") Name
-				input(type="text" name="name" ng-model="newUser.name" id="newUserName" placeholder="Name" minlength="3" required).form-control
+				label(for="newUserName" translate="NAME")
+				input(type="text" name="name" ng-model="newUser.name" id="newUserName" placeholder=" {{'NAME' | translate}} " minlength="3" required).form-control
 				div.error-box-form(ng-show="signUpForm.name.$dirty && signUpForm.name.$invalid" ng-messages="signUpForm.name.$error")
-					p.text-danger(ng-message="required") Please enter a value for this field.
-					p.text-danger(ng-message="minlength") Password must be more 3 characters
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{type: 'Пароль', length: '3'}")
 					hr
 			.form-group
 				label(for="newUserEmail") Email
 				input(type="email" name="email" ng-model="newUser.email" id="newUserEmail" placeholder="Email" required).form-control
 				div.error-box-form(ng-show="signUpForm.email.$dirty && signUpForm.email.$invalid" ng-messages="signUpForm.email.$error")
-					p.text-danger(ng-message="required") Please enter a value for this field.
-					p.text-danger(ng-message="email") This field must be a valid email address.
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS") 
+					p.text-danger(ng-message="email" translate="WARNS.EMAIL_MESS")
 					hr
 			.form-group
-				label(for="newUserPassword") Password
+				label(for="newUserPassword" translate="PASSWORD")
 				input(type="password" name="password" ng-model="newUser.password" id="newUserPassword" placeholder="Password" minlength="3" required).form-control
 				div.error-box-form(ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid" ng-messages="signUpForm.name.$error")
-					p.text-danger(ng-message="required") Please enter a value for this field.
-					p.text-danger(ng-message="minlength") Password must be more 3 characters
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{type: 'Пароль', length: '3'}")
 			hr
 			button.btn.btn-primary(ng-disabled="signUpForm.$invalid") Sign up

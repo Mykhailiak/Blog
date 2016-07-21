@@ -5,15 +5,15 @@
 		hr
 		form(name="signInForm", novalidate, ng-submit="authUser(user, signInForm.$valid)")
 			.form-group
-				label(for="userName") Name
-				input(type="text" name="name" ng-model="user.name" id="userName" placeholder="Name" required).form-control
+				label(for="userName" translate="NAME")
+				input(type="text" name="name" ng-model="user.name" id="userName" placeholder=" {{'NAME' | translate}} " required).form-control
 				div.error-box-form(ng-show="signInForm.name.$dirty && signInForm.name.$invalid" ng-messages="signInForm.name.$error")
-					p.text-danger(ng-message="required") Please enter a value for this field.
+					p.text-danger(ng-message="required" translate="REQUIRED_MESS")
 					hr
 			.form-group
-				label(for="userPassword") Password
-				input(type="password" name="password" ng-model="user.password" id="userPassword" placeholder="Password" required).form-control
+				label(for="userPassword" translate="PASSWORD")
+				input(type="password" name="password" ng-model="user.password" id="userPassword" placeholder=" {{'PASSWORD' | translate}} " required).form-control
 				div.error-box-form(ng-show="signInForm.password.$dirty && signInForm.password.$invalid" ng-messages="signInForm.name.$error")
-					p.text-danger(ng-message="required") Please enter a value for this field.
+					p.text-danger(ng-message="required" translate="REQUIRED_MESS")
 			hr
-			button.btn.btn-primary(ng-disabled="signInForm.$invalid") Sign in
+			button.btn.btn-primary(ng-disabled="signInForm.$invalid" translate="SIGN.SIGN_IN")
