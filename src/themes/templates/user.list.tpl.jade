@@ -1,4 +1,4 @@
-ul.users-list.list-group
+ul.users-list.list-group(cg-busy="usersPromise")
 	li.list-group-item.user-list-group-item(ng-repeat="user in users | limitTo : 5 | orderBy : 'created' : true")
 		article.panel.panel-default.user-item-panel
 			div.panel-heading(ng-bind-template="Role - {{user.role}}")
