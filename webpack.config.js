@@ -46,7 +46,9 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery',
-			"window.jQuery": 'jquery'
+			'window.jQuery': 'jquery',
+			_ : 'lodash',
+			'window.lodash': 'lodash'
 		}),
 		new webpack.NoErrorsPlugin(),
 		new WebpackBuildNotifierPlugin(),

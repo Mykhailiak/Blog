@@ -24,7 +24,8 @@
     "angular-messages": "^1.5.7",
     "angular-translate": "^2.11.1",
     "angular-translate-loader-static-files": "^2.11.1",
-    "angular-translate-loader-url": "^2.11.1"
+    "angular-translate-loader-url": "^2.11.1",
+    "angular-google-maps": "^2.3.3"
   },
   "resolutions": {
     "angular": "^1.5.5"

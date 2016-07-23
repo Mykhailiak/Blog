@@ -8,7 +8,8 @@ export default angular.module('app', [
 	'cgBusy',
 	'ui.bootstrap',
 	'ngMessages',
-	'pascalprecht.translate'
+	'pascalprecht.translate',
+	'uiGmapgoogle-maps'
 	]).run(($state) => {
 		$state.go('root.home');
 	});

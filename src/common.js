@@ -7,4 +7,6 @@ import 'angular-busy-js';
 import 'angular-messages';
 import 'angular-translate';
 import 'angular-static-loader';
+import 'angular-simple-logger';
+import 'angular-google-maps';
 import './resources/';
