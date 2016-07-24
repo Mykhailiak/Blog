@@ -1,3 +1,4 @@
-h1 Angular-map
-
 ui-gmap-google-map(center="map.center", zoom="map.zoom")
+	ui-gmap-marker(ng-repeat="marker in markers" coords="marker.coords", idkey="marker.id")
+		ui-gmap-window
+			p: strong(ng-cloak) {{marker.info}}
