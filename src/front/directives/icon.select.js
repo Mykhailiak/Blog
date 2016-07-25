@@ -1,6 +1,6 @@
 import app from './../application';
 
-import iconSelectTpl from './../themes/templates/icon.select.tpl.jade';
+import iconSelectTpl from './../../themes/templates/icon.select.tpl.jade';
 
 
 app.directive('iconSelect', () => {

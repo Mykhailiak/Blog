@@ -1,12 +1,12 @@
 import app from './../application';
 
-import homeTpl from './../themes/templates/home.tpl.jade';
-import signUpTpl from './../themes/templates/signup.tpl.jade';
-import signInTpl from './../themes/templates/signin.tpl.jade';
-import accountTpl from './../themes/templates/accout.tpl.jade';
-import postTpl from './../themes/templates/post.tpl.jade';
-import appTpl from './../themes/templates/application.tpl.jade';
-import mapTpl from './../themes/templates/map.tpl.jade';
+import homeTpl from './../../themes/templates/home.tpl.jade';
+import signUpTpl from './../../themes/templates/signup.tpl.jade';
+import signInTpl from './../../themes/templates/signin.tpl.jade';
+import accountTpl from './../../themes/templates/accout.tpl.jade';
+import postTpl from './../../themes/templates/post.tpl.jade';
+import appTpl from './../../themes/templates/application.tpl.jade';
+import mapTpl from './../../themes/templates/map.tpl.jade';
 
 
 app.config(($stateProvider, $urlRouterProvider) => {

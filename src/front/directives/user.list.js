@@ -1,6 +1,6 @@
 import app from './../application';
 
-import userListTpl from './../themes/templates/user.list.tpl.jade';
+import userListTpl from './../../themes/templates/user.list.tpl.jade';
 
 
 app.directive('userList', () => {

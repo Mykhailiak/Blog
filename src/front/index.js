@@ -7,4 +7,4 @@ import './directives/';
 import './filters/';
 import './services/';
 
-import './themes/styles/';
+import './../themes/styles/';

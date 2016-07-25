@@ -11,7 +11,8 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 module.exports = {
 	context: path.resolve(__dirname, './src'),
 	entry: {
-		app: './index',
+		app: './front/index',
+		admin: './admin/index'
 	},
 	output: {
 		path: path.resolve(__dirname, './public/build/'),

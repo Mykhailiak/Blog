@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import './common';
+import './../common';
 
 export default angular.module('app', [
 	'ui.router',

@@ -1,7 +1,7 @@
 import app from './../application';
 
-import uaLang from './../libs/lang-ua.json';
-import enLang from './../libs/lang-en.json';
+import uaLang from './../../libs/lang-ua.json';
+import enLang from './../../libs/lang-en.json';
 
 
 app.config(($translateProvider) => {
