@@ -25,5 +25,6 @@
 	"important": false,
 	"outline-none": false,
 	"qualified-headings": false,
-	"unique-headings": false
+	"unique-headings": false,
+	"order-alphabetical": false
 }

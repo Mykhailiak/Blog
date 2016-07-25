@@ -29,7 +29,7 @@ module.exports = {
 			{test: /\.html$/, loader: 'ngtemplate!html'},
 			{test: /\.jade$/, loader: 'jade'},	//'ngtemplate!html!apply!jade', 'ngtemplate!html!jade', 'ngtemplate!html!apply!jade-html-loader'
 			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css!postcss')},
-			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!postcss!csslint?failOnWarning=false?configFile=./configs/.csslintrc!stylus?resolve url')},
+			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!postcss!csslint?configFile=./configs/csslint!stylus?resolve url')},
 		{test: /\.png$/, loader: 'url?limit=100000'},
 			{test: /\.gif$/, loader: 'url?limit=10000'},
 			{test: /\.json$/, loader: 'json'},
