@@ -9,7 +9,11 @@ app.directive('userList', () => {
 		template: userListTpl(),
 		scope: {
 			users: '=list',
-			search: '='
+			search: '=',
+			reverse: '=?'
+		},
+		controller($scope) {
+			$scope.reverse = angular.isDefined($scope.reverse) ? $scope.reverse : true;
 		}
 	};
 });

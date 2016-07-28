@@ -8,6 +8,13 @@ app.controller('UsersCtrl', ($scope, Users) => {
 		console.error(err);
 	});
 
+	$scope.reverse = true;
+
+	$scope.setReverse = (value) => {
+		$scope.reverse = !value;
+		console.log($scope.reverse);
+	};
+
 	$scope.search = {
 		name: '',
 		role: '',

@@ -4,6 +4,8 @@
 			h4 Search
 			hr
 			div.filter-field
-				input.form-control(type="text" ng-model="search.name" placeholder="{{'FILTER.FILTER_USER_NAME' | translate}}")
+				.form-group
+					input.form-control(type="text" ng-model="search.name" placeholder="{{'FILTER.FILTER_USER_NAME' | translate}}")
+				a.btn.btn-block.btn-primary(ng-class="{ 'active': !reverse }" ng-click="setReverse(reverse)") Reverse
 	.col-md-8.col-md-offset-1
-		user-list(list="users" search="search")
+		user-list(list="users" search="search" reverse="reverse")
