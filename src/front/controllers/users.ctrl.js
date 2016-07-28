@@ -9,5 +9,10 @@ app.controller('UsersCtrl', ($scope, Users) => {
 		console.error(err);
 	});
 
-	console.log('hello')
+	$scope.search = {
+		name: '',
+		role: '',
+		email: ''
+	};
+
 });

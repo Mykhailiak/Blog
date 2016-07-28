@@ -4,6 +4,6 @@
 			h4 Filter
 			hr
 			div.filter-field
-				input.form-control(type="text" placeholder="{{'FILTER.FILTER_USER_NAME' | translate}}")
+				input.form-control(type="text" ng-model="search.name" placeholder="{{'FILTER.FILTER_USER_NAME' | translate}}")
 	.col-md-8.col-md-offset-1
-		user-list(list="users")
+		user-list(list="users" search="search")
