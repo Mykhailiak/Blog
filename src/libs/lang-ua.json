@@ -20,5 +20,8 @@
 	"RECENT_POST": "Нещодавні пости",
 	"POSTED_BY": "Опубліковано",
 	"NAME": "Ім'я",
-	"PASSWORD": "Пароль"
+	"PASSWORD": "Пароль",
+	"FILTER": {
+		"FILTER_USER_NAME": "Введіть ім'ю користувача"
+	}
 }

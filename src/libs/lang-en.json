@@ -20,5 +20,8 @@
 	"RECENT_POST": "Recent posts",
 	"POSTED_BY": "Posted by",
 	"NAME": "Name",
-	"PASSWORD": "Password"
+	"PASSWORD": "Password",
+	"FILTER": {
+		"FILTER_USER_NAME": "Start typing user's name"
+	}
 }
