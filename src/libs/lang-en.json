@@ -23,5 +23,6 @@
 	"PASSWORD": "Password",
 	"FILTER": {
 		"FILTER_USER_NAME": "Start typing user's name"
-	}
+	},
+	"USERS_NOT_FOUND": "Users not found"
 }

@@ -1,7 +1,10 @@
 ul.users-list.list-group(cg-busy="usersPromise")
-	li.list-group-item.user-list-group-item(ng-repeat="user in users | filter: search | limitTo : 5 | orderBy : 'created' : true")
+	li.list-group-item.user-list-group-item(ng-repeat="user in filteredUsers = (users | filter: search | limitTo : 5 | orderBy : 'created' : true)")
 		article.panel.panel-default.user-item-panel
 			div.panel-heading(ng-bind-template="Role - {{user.role}}")
 			div.panel-body.user-item-panel-body
 				a(ng-bind="user.name" ui-sref="root.account({id: user._id})")
 				a(ng-bind="user.email" ng-href="mailto:{{user.email}}")
+
+div.list-unstyled(ng-if="!filteredUsers.length")
+	p.text-center.lead(translate="USERS_NOT_FOUND")
