@@ -1,0 +1,9 @@
+.row
+	.col-md-3
+		.well
+			h4 Filter
+			hr
+			div.filter-field
+				input.form-control(type="text" placeholder="{{'FILTER.FILTER_USER_NAME' | translate}}")
+	.col-md-8.col-md-offset-1
+		user-list(list="users")

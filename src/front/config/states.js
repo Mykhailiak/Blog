@@ -7,6 +7,7 @@ import accountTpl from './../../themes/templates/accout.tpl.jade';
 import postTpl from './../../themes/templates/post.tpl.jade';
 import appTpl from './../../themes/templates/application.tpl.jade';
 import mapTpl from './../../themes/templates/map.tpl.jade';
+import usersTpl from './../../themes/templates/users.jade';
 
 
 app.config(($stateProvider, $urlRouterProvider) => {
@@ -32,6 +33,11 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			url: 'signIn',
 			controller: 'SignInCtrl',
 			template: signInTpl()
+		})
+		.state('root.users', {
+			url: 'user',
+			controller: 'UsersCtrl',
+			template: usersTpl
 		})
 		.state('root.account', {
 			url: 'accout/:id',
