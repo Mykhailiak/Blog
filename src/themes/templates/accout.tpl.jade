@@ -1,28 +1,29 @@
-.col-md-3
-	.well.user-widget
-		h3.text-primary: strong(ng-bind="user.name")
-		hr
-		div.icon-user-select
-			icon-select.text-info(status="user.role")
-			span.user-role(ng-bind="user.role")
-		hr
-		div.text-center
-			a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
-.col-md-6
-	.well
-		form.write-post-form(name="write-post" novalidate)
-			textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} ")
-			.form-main-act
-				ul.widgt-adds
-					li
-						label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
-						input#post-photo.wdgt-post-photo-inpt(type="file" required)
-				button.btn.btn-success(translate="POST")
-.col-md-3
-	.well
-		h4 Filter
-		hr
-	section.well.acc-users-list
-		h4 Users
-		hr
-		user-list(list="users")
+.row
+	.col-md-3
+		.well.user-widget
+			h3.text-primary: strong(ng-bind="user.name")
+			hr
+			div.icon-user-select
+				icon-select.text-info(status="user.role")
+				span.user-role(ng-bind="user.role")
+			hr
+			div.text-center
+				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
+	.col-md-6
+		.well
+			form.write-post-form(name="write-post" novalidate)
+				textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} ")
+				.form-main-act
+					ul.widgt-adds
+						li
+							label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
+							input#post-photo.wdgt-post-photo-inpt(type="file" required)
+					button.btn.btn-success(translate="POST")
+	.col-md-3
+		.well
+			h4 Filter
+			hr
+		section.well.acc-users-list
+			h4 Users
+			hr
+			user-list(list="users")
