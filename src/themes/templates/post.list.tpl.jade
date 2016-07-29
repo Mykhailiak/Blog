@@ -1,5 +1,5 @@
 ul.posts-list.list-group(cg-busy="postsPromise")
-	li.list-group-item.pre-post-list-group-item(ng-repeat="post in posts | limitTo : 5 | orderBy : 'created' : true")
+	li.list-group-item.pre-post-list-group-item(ng-repeat="post in filteredPosts = (posts | limitTo : 5 | orderBy : 'created' : true)")
 		div.panel.post-pre-panel
 			.panel-heading
 				h4: a(ng-bind="post.title", ui-sref="root.post({id: post._id})")
@@ -13,3 +13,5 @@ ul.posts-list.list-group(cg-busy="postsPromise")
 					//- ng-repeat="tag in post.tags"
 					li(ng-repeat="tag in ['awesome', 'post', 'detail'] ")
 						a.label.label-info(ng-bind="tag")
+div.list-unstyled(ng-if="!filteredPosts.length")
+	p.text-center.lead(translate="POSTS_NOT_FOUND")
