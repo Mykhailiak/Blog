@@ -7,7 +7,7 @@ app.controller('MapCtrl', ($scope, uiGmapGoogleMapApi, mapConst, Markers) => {
 
 	Markers.query().$promise.then((data) => {
 		$scope.markers = data;
-	}, (err) => {
+	}).catch((err) => {
 		console.error(err);
 	});
 

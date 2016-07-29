@@ -12,9 +12,9 @@ app.controller('SignUpCtrl', ($scope, Users, $state) => {
 				role: 'user'
 			}).$promise.then((res) => {
 				console.log(res);
-			}, (err) => {
-				console.log(err);
+			}).catch((err) => {
+				console.error(err);
 			});
 		}
-	}
+	};
 });

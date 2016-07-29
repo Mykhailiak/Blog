@@ -4,7 +4,7 @@ import app from './../application';
 app.controller('UsersCtrl', ($scope, Users) => {
 	$scope.usersPromise = Users.query().$promise.then((data) => {
 		$scope.users = data;
-	}, (err) => {
+	}).catch((err) => {
 		console.error(err);
 	});
 
