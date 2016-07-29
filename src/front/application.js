@@ -9,7 +9,8 @@ export default angular.module('app', [
 	'ui.bootstrap',
 	'ngMessages',
 	'pascalprecht.translate',
-	'uiGmapgoogle-maps'
+	'uiGmapgoogle-maps',
+	'ngMaterial'
 	]).run(($state) => {
 		$state.go('root.home');
 	});
