@@ -8,6 +8,7 @@
 		"MIN_LENGTH": "Це поле має мати більше ніж {{length}} символи",
 		"EMAIL_MESS": "Це поле має бути email'ом"
 	},
+	"SEARCH": "Пошук",
 	"NAVIGATION": {
 		"HOME": "Дім",
 		"USERS": "Користувачі",

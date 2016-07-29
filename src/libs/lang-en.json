@@ -8,6 +8,7 @@
 		"MIN_LENGTH": "This field must have more than {{length}} characters",
 		"EMAIL_MESS": "This field should be an e-mail"
 	},
+	"SEARCH": "Search",
 	"NAVIGATION": {
 		"HOME": "Home",
 		"USERS": "Users",
