@@ -4,5 +4,11 @@
 			h4 Search
 			hr
 			div.filter-field
+				.form-group
+					label(for="globSearch" translate="FILTER.GLOBAL_SEARCH")
+					input.form-control#globSearch(type="text" placeholder="{{'FILTER.GLOBAL_SEARCH' | translate}}")
+				.form-group
+					label(for="searchTag" translate="FILTER.FILTER_TAG_LABEL")
+					input.form-control#searchTag(type="text" placeholder="{{'FILTER.FILTER_TAG' | translate}}")
 	.col-md-8.col-md-offset-1
 		post-list(list="posts")
