@@ -8,6 +8,11 @@ import postTpl from './../../themes/templates/post.tpl.jade';
 import appTpl from './../../themes/templates/application.tpl.jade';
 import mapTpl from './../../themes/templates/map.tpl.jade';
 import usersTpl from './../../themes/templates/users.jade';
+import postsTpl from './../../themes/templates/posts.jade';
+
+console.log(postsTpl);
+console.log('----------------');
+console.log(postsTpl());
 
 
 app.config(($stateProvider, $urlRouterProvider) => {
@@ -38,6 +43,11 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			url: 'user',
 			controller: 'UsersCtrl',
 			template: usersTpl
+		})
+		.state('root.posts', {
+			url: 'posts',
+			controller: 'PostsCtrl',
+			template: postsTpl
 		})
 		.state('root.account', {
 			url: 'accout/:id',

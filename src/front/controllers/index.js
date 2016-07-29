@@ -6,3 +6,4 @@ import './account.ctrl';
 import './map.ctrl';
 import './post.ctrl';
 import './users.ctrl';
+import './posts.ctrl';
