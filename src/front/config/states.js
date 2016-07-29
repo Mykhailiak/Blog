@@ -10,10 +10,6 @@ import mapTpl from './../../themes/templates/map.tpl.jade';
 import usersTpl from './../../themes/templates/users.jade';
 import postsTpl from './../../themes/templates/posts.jade';
 
-console.log(postsTpl);
-console.log('----------------');
-console.log(postsTpl());
-
 
 app.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
@@ -21,23 +17,23 @@ app.config(($stateProvider, $urlRouterProvider) => {
 		.state('root', {
 			url: '/',
 			controller: 'MainCtrl',
-			template: appTpl(),
+			template: appTpl,
 			redirectTo: 'root.home'
 		})
 		.state('root.home', {
 			url: 'home',
 			controller: 'HomeCtrl',
-			template: homeTpl()
+			template: homeTpl
 		})
 		.state('root.signUp', {
 			url: 'signUp',
 			controller: 'SignUpCtrl',
-			template: signUpTpl()
+			template: signUpTpl
 		})
 		.state('root.signIn', {
 			url: 'signIn',
 			controller: 'SignInCtrl',
-			template: signInTpl()
+			template: signInTpl
 		})
 		.state('root.users', {
 			url: 'user',
@@ -52,16 +48,16 @@ app.config(($stateProvider, $urlRouterProvider) => {
 		.state('root.account', {
 			url: 'accout/:id',
 			controller: 'AccountCtrl',
-			template: accountTpl()
+			template: accountTpl
 		})
 		.state('root.post', {
 			url: 'post/:id',
 			controller: 'PostCtrl',
-			template: postTpl()
+			template: postTpl
 		})
 		.state('root.map', {
 			url: 'map',
 			controller: 'MapCtrl',
-			template: mapTpl()
+			template: mapTpl
 		})
 });
