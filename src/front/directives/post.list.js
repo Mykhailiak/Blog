@@ -8,7 +8,8 @@ app.directive('postList', () => {
 		restrict: 'E',
 		template: postListTpl(),
 		scope: {
-			posts: '=list'
+			posts: '=list',
+			search: '='
 		}
 	};
 });

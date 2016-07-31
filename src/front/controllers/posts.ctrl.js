@@ -7,4 +7,12 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 	}).catch((err) => {
 		console.error(err);
 	});
+
+	$scope.search = {
+		title: '',
+		text: '',
+		author: '',
+		created: ''
+	};
+
 });
