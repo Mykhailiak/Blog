@@ -14,7 +14,7 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 		title: '',
 		text: '',
 		author: '',
-		created: '',
+		created: ''
 	};
 
 
