@@ -18,10 +18,10 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			url: '/',
 			controller: 'MainCtrl',
 			template: appTpl,
-			redirectTo: 'root.home'
+			abstract: true
 		})
 		.state('root.home', {
-			url: 'home',
+			url: '',
 			controller: 'HomeCtrl',
 			template: homeTpl
 		})
