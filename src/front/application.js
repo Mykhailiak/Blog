@@ -1,3 +1,4 @@
+
 import angular from 'angular';
 
 import './../common';
@@ -11,6 +12,4 @@ export default angular.module('app', [
 	'pascalprecht.translate',
 	'uiGmapgoogle-maps',
 	'ngMaterial'
-	]).run(($state) => {
-		$state.go('root.home');
-	});
+	]);
