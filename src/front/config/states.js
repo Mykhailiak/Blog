@@ -46,7 +46,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			template: postsTpl
 		})
 		.state('root.account', {
-			url: 'accout/:id',
+			url: 'account/:id',
 			controller: 'AccountCtrl',
 			template: accountTpl
 		})
