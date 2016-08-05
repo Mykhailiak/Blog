@@ -117,8 +117,10 @@ body
 	align-items center
 	justify-content space-between
 
-.write-post-form
+.write-post-form,
+.write-comment-form
 	textarea
+		display block
 		height 117px
 		resize none
 
@@ -188,6 +190,14 @@ body
 
 .comment-time
 	font-size 12px
+
+.write-comment-form
+	textarea
+		height 80px
+		margin-bottom 15px
+
+.title-comment-frm
+	margin-bottom 15px
 
 @keyframes spinReturn {
 	0% {

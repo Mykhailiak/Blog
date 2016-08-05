@@ -31,5 +31,8 @@
 	"USERS_NOT_FOUND": "Користувачів не знайдено",
 	"POSTS_NOT_FOUND": "Публікацій не знайдено",
 	"COMMENTS": "Коментарів",
-	"COMMENTS_TITLE": "Коментарі"
+	"COMMENTS_TITLE": "Коментарі",
+	"WRITE_COMMENT": "Введіть текст коментаря",
+	"COMMENT": "Коментувати",
+	"WRITE_TITLE_COMMENT": "Введіть заголовок коментаря"
 }

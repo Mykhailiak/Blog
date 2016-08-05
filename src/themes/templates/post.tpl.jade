@@ -15,6 +15,12 @@
 			li(ng-repeat="tag in post.tag.tagname | tagsToArray")
 				a.label.label-info(ng-bind="tag")
 		hr
-	h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comment.length}})")
-	comment-list(comments="post.comment")
+	.post-comments
+		h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comment.length}})")
+		.well
+			form.write-comment-form(name="write-comment" novalidate)
+				input.form-control.title-comment-frm(type="text" placeholder=" {{'WRITE_TITLE_COMMENT' | translate}} " required name="comment.title")
+				textarea.form-control(placeholder=" {{'WRITE_COMMENT' | translate}} " required name="comment.text")
+				button.btn.btn-success(translate="COMMENT")
+		comment-list(comments="post.comment")
 
