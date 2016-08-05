@@ -1,0 +1,11 @@
+ul.comments-list
+	li.comment-item-wrapp(ng-repeat="comment in comments")
+		.panel.panel-default
+			.panel-body
+				header
+					.comment-data
+						span(ng-bind="comment.author_comment")
+						span(ng-bind="comment.date_comment | date")
+					h5.comment-title(ng-bind="comment.name_comment")
+				.comment-body
+					p(ng-bind="comment.text_comment")

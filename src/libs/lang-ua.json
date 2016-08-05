@@ -30,5 +30,6 @@
 	},
 	"USERS_NOT_FOUND": "Користувачів не знайдено",
 	"POSTS_NOT_FOUND": "Публікацій не знайдено",
-	"COMMENTS": "Коментарів"
+	"COMMENTS": "Коментарів",
+	"COMMENTS_TITLE": "Коментарі"
 }

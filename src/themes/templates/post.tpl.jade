@@ -14,4 +14,7 @@
 		ul.list-inline
 			li(ng-repeat="tag in post.tag.tagname | tagsToArray")
 				a.label.label-info(ng-bind="tag")
+		hr
+	h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comment.length}})")
+	comment-list(comments="post.comment")
 

@@ -30,5 +30,6 @@
 	},
 	"USERS_NOT_FOUND": "Users not found",
 	"POSTS_NOT_FOUND": "Posts not found",
-	"COMMENTS": "Comments"
+	"COMMENTS": "Comments",
+	"COMMENTS_TITLE": "Comments"
 }
