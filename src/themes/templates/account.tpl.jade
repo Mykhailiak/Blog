@@ -14,14 +14,17 @@
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
 	.col-md-6
 		.well
-			form.write-post-form(name="write-post" novalidate)
-				textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} ")
+			form.write-post-form(name="writePost" novalidate)
+				input.form-control.post-title-wr(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
+				textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
 				.form-main-act
 					ul.widgt-adds
 						li
 							label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
-							input#post-photo.wdgt-post-photo-inpt(type="file" required)
-					button.btn.btn-success(translate="POST")
+							input#post-photo.wdgt-post-photo-inpt(type="file")
+					button.btn.btn-success(translate="POST" ng-disabled="writePost.$invalid")
+				div.error-box-form(ng-show="writePost.title.$dirty && writePost.text.$invalid" ng-messages="writePost.$error")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
 		post-list(list="user.posts")
 	.col-md-3
 		.well

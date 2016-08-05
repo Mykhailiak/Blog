@@ -34,5 +34,6 @@
 	"COMMENTS_TITLE": "Коментарі",
 	"WRITE_COMMENT": "Введіть текст коментаря",
 	"COMMENT": "Коментувати",
-	"WRITE_TITLE_COMMENT": "Введіть заголовок коментаря"
+	"WRITE_TITLE_COMMENT": "Введіть заголовок коментаря",
+	"WRITE_POST_TITLE": "Введіть заголовок посту"
 }
