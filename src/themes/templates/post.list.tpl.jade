@@ -15,5 +15,5 @@ ul.posts-list.list-group(cg-busy="postsPromise")
 							a.label.label-info(ng-bind="tag")
 				div.bottom-part-post-f-pannel
 					small.text-muted(ng-bind-template="{{post.comment.length}} {{'COMMENTS' | translate}} ")
-	div.list-unstyled(ng-if="!filteredPosts.length")
+div.list-unstyled(ng-if="!filteredPosts.length")
 	p.text-center.lead(translate="POSTS_NOT_FOUND")
