@@ -8,7 +8,7 @@
 				span.user-role(ng-bind="user.role | role")
 			hr
 			span
-				small(ng-bind-template="Created at: {{user.user_create_date | date}} ")
+				time(ng-bind-template="Created at: {{user.user_create_date | date}} ")
 			hr
 			div.text-center
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")

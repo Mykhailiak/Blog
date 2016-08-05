@@ -5,7 +5,7 @@ ul.comments-list
 				header
 					.comment-data
 						span(ng-bind="comment.author_comment")
-						span(ng-bind="comment.date_comment | date")
+						time(ng-bind="comment.date_comment | date")
 					h5.comment-title(ng-bind="comment.name_comment")
 				.comment-body
 					p(ng-bind="comment.text_comment")
