@@ -10,7 +10,7 @@ ul.posts-list.list-group(cg-busy="postsPromise")
 					i.fa.fa-user.text-info
 					a.text-info(ng-bind-template="@{{post.author_post}}")
 				ul.list-inline
-					li(ng-repeat="tag in post.tag.tagname.split(',') ")
+					li(ng-repeat="tag in post.tag.tagname | tagsToArray")
 						a.label.label-info(ng-bind="tag")
 div.list-unstyled(ng-if="!filteredPosts.length")
 	p.text-center.lead(translate="POSTS_NOT_FOUND")

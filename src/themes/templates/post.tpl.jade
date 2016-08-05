@@ -11,6 +11,6 @@
 		p(ng-bind="post.text_post")
 		hr
 		ul.list-inline
-			li(ng-repeat="tag in post.tags.split(',') ")
+			li(ng-repeat="tag in post.tag.tagname | tagsToArray")
 				a.label.label-info(ng-bind="tag")
 
