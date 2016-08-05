@@ -6,11 +6,14 @@ ul.posts-list.list-group(cg-busy="postsPromise")
 				span.text-info(ng-bind="post.date_post | date")
 			.panel-body(ng-bind="post.text_post | truncate : 150")
 			.panel-footer.pre-post-f-pannel
-				span.author-post
-					i.fa.fa-user.text-info
-					a.text-info(ng-bind-template="@{{post.author_post}}")
-				ul.list-inline
-					li(ng-repeat="tag in post.tag.tagname | tagsToArray")
-						a.label.label-info(ng-bind="tag")
-div.list-unstyled(ng-if="!filteredPosts.length")
+				div.upper-part-post-f-pannel
+					span.author-post
+						i.fa.fa-user.text-info
+						a.text-info(ng-bind-template="@{{post.author_post}}")
+					ul.list-inline
+						li(ng-repeat="tag in post.tag.tagname | tagsToArray")
+							a.label.label-info(ng-bind="tag")
+				div.bottom-part-post-f-pannel
+					small.text-muted(ng-bind-template="{{post.comment.length}} {{'COMMENTS' | translate}} ")
+	div.list-unstyled(ng-if="!filteredPosts.length")
 	p.text-center.lead(translate="POSTS_NOT_FOUND")

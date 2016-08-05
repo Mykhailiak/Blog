@@ -29,5 +29,6 @@
 		"FILTER_TAG_LABEL": "Пошук по тегу"
 	},
 	"USERS_NOT_FOUND": "Користувачів не знайдено",
-	"POSTS_NOT_FOUND": "Публікацій не знайдено"
+	"POSTS_NOT_FOUND": "Публікацій не знайдено",
+	"COMMENTS": "Коментарів"
 }
