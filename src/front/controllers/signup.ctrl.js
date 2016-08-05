@@ -9,7 +9,7 @@ app.controller('SignUpCtrl', ($scope, Users, $state, roles) => {
 				name: newUser.name,
 				email: newUser.email,
 				password: newUser.password,
-				role: roles.user;
+				role: roles.user
 			}).$promise.then((res) => {
 				console.log(res);
 			}).catch((err) => {
