@@ -7,6 +7,9 @@
 				icon-select.text-info(status="user.role")
 				span.user-role(ng-bind="user.role | role")
 			hr
+			span
+				small(ng-bind-template="Created at: {{user.user_create_date | date}} ")
+			hr
 			div.text-center
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
 	.col-md-6
@@ -19,6 +22,7 @@
 							label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
 							input#post-photo.wdgt-post-photo-inpt(type="file" required)
 					button.btn.btn-success(translate="POST")
+		post-list(list="user.posts")
 	.col-md-3
 		.well
 			h4 Filter
