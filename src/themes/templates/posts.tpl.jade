@@ -10,5 +10,5 @@
 				.form-group
 					label(for="searchTag" translate="FILTER.FILTER_TAG_LABEL")
 					input.form-control#searchTag(type="text" ng-model="search.tag.tagname" placeholder="{{'FILTER.FILTER_TAG' | translate}}")
-	.col-md-8.col-md-offset-1
+	.col-md-8.col-md-offset-1(cg-busy="postsPromise")
 		post-list(list="posts" search="search")

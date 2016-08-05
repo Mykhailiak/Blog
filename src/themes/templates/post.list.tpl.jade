@@ -1,4 +1,4 @@
-ul.posts-list.list-group(cg-busy="postsPromise")
+ul.posts-list.list-group
 	li.list-group-item.pre-post-list-group-item(ng-repeat="post in filteredPosts = (posts | filter : search | limitTo : 5 | orderBy : 'date_post' : true)")
 		div.panel.post-pre-panel
 			.panel-heading
