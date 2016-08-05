@@ -9,4 +9,4 @@ app.filter('tagsToArray', () => {
 
 		return value;
 	};
-})
+});

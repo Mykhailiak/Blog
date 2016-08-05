@@ -6,6 +6,7 @@ import mapData from './../../libs/map.json';
 import loadTpl from './../../themes/templates/preloader_tpls/preloadPromise.tpl.html';
 
 app.constant('backEndUrl', data.backEndUr);
+app.value('roles', data.roles);
 app.value('mapConst', mapData);
 app.value('cgBusyDefaults', {
 	templateUrl: loadTpl,
