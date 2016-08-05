@@ -1,11 +1,11 @@
 .row
 	.col-md-3
 		.well.user-widget
-			h3.text-primary: strong(ng-bind="user.name")
+			h3.text-primary: strong(ng-bind="user.username")
 			hr
 			div.icon-user-select
 				icon-select.text-info(status="user.role")
-				span.user-role(ng-bind="user.role")
+				span.user-role(ng-bind="user.role | role")
 			hr
 			div.text-center
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
