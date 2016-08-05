@@ -5,7 +5,8 @@
 		h3.text-center(ng-bind="post.name_post")
 		hr
 		span.text-info.visible-lg-block(ng-bind="post.date_post | date")
-		span.text-muted(translate="POSTED_BY")
+		div.posted-by
+			span.text-muted(translate="POSTED_BY")
 			a(ng-bind-template="@{{post.author_post}}" ui-sref="root.account({id: post.user_post.id})")
 		hr
 		p(ng-bind="post.text_post")
