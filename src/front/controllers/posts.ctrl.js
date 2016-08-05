@@ -8,19 +8,14 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 		console.error(err);
 	});
 
-	// $scope.tags = '';
-
 	$scope.search = {
 		name_post: '',
 		text_post: '',
 		author_post: '',
-		date_post: ''
+		date_post: '',
+		tag: {
+			tagname: ''
+		}
 	};
-
-
-	// $scope.$watch('tags', (newVal, oldVal) => {
-	// 	$scope.search.tags = $scope.tags.split(/[\s,]+/);
-	// });
-
 
 });
