@@ -16,7 +16,7 @@ app.controller('UsersCtrl', ($scope, Users) => {
 	};
 
 	$scope.search = {
-		name: '',
+		username: '',
 		role: '',
 		email: ''
 	};

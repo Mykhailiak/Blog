@@ -2,16 +2,15 @@ ul.posts-list.list-group(cg-busy="postsPromise")
 	li.list-group-item.pre-post-list-group-item(ng-repeat="post in filteredPosts = (posts | filter : search | limitTo : 5 | orderBy : 'created' : true)")
 		div.panel.post-pre-panel
 			.panel-heading
-				h4: a(ng-bind="post.title", ui-sref="root.post({id: post._id})")
-				span.text-info(ng-bind="post.created | date")
-			.panel-body(ng-bind="post.text | truncate : 150")
+				h4: a(ng-bind="post.name_post", ui-sref="root.post({id: post.id})")
+				span.text-info(ng-bind="post.date_post | date")
+			.panel-body(ng-bind="post.text_post | truncate : 150")
 			.panel-footer.pre-post-f-pannel
 				span.author-post
 					i.fa.fa-user.text-info
-					a.text-info(ng-bind-template="@{{post.author}}")
+					a.text-info(ng-bind-template="@{{post.author_post}}")
 				ul.list-inline
-					//- ng-repeat="tag in post.tags"
-					li(ng-repeat="tag in ['awesome', 'post', 'detail'] ")
+					li(ng-repeat="tag in post.tag.tagname.split(',') ")
 						a.label.label-info(ng-bind="tag")
 div.list-unstyled(ng-if="!filteredPosts.length")
 	p.text-center.lead(translate="POSTS_NOT_FOUND")
