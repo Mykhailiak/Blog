@@ -10,6 +10,6 @@ app.directive('iconSelect', () => {
 			status: '='
 		},
 		replace: true,
-		template: iconSelectTpl()
+		template: iconSelectTpl
 	}
 });
