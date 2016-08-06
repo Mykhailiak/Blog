@@ -21,7 +21,7 @@ app.controller('PostCtrl', ($scope, Posts, Comments, $stateParams, $state) => {
 		Comments.save(newComment).then((comment) => {
 			$scope.post.comment.push(comment);
 		}).catch((err) => {
-			console.err(err);
+			console.error(err);
 		});
 	};
 });
