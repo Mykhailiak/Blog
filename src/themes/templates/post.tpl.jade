@@ -1,5 +1,5 @@
 .col-md-8.col-md-offset-2
-	.post
+	.post(cg-busy="postsPromise")
 		img.img-responsive.img-rounded(ng-src="http://www.lifeofpix.com/wp-content/uploads/2016/07/Life-of-Pix-free-stock-landscape-eolian-mountains-JasonBlackeye-1440x960.jpeg", alt="")
 		hr
 		h3.text-center(ng-bind="post.name_post")
@@ -24,5 +24,6 @@
 				button.btn.btn-success(translate="COMMENT" ng-disabled="writeComment.$invalid")
 				div.error-box-form(ng-show="writeComment.title.$dirty && writeComment.text.$invalid" ng-messages="writeComment.$error")
 					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-		comment-list(comments="post.comment")
+		.div(cg-busy="commentPromise")
+			comment-list(comments="post.comment")
 
