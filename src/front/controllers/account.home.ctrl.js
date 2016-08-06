@@ -7,4 +7,6 @@ app.controller('AccountHomeCtrl', ($scope, Users) => {
 	}).catch((err) => {
 		console.error(err);
 	});
+
+	$scope.search = {};
 });
