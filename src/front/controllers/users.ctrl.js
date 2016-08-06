@@ -15,10 +15,6 @@ app.controller('UsersCtrl', ($scope, Users) => {
 		console.log($scope.reverse);
 	};
 
-	$scope.search = {
-		username: '',
-		role: '',
-		email: ''
-	};
+	$scope.search = {};
 
 });

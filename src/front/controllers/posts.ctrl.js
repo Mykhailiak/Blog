@@ -8,14 +8,6 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 		console.error(err);
 	});
 
-	$scope.search = {
-		name_post: '',
-		text_post: '',
-		author_post: '',
-		date_post: '',
-		tag: {
-			tagname: ''
-		}
-	};
+	$scope.search = {};
 
 });
