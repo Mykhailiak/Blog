@@ -17,7 +17,7 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 	$scope.newPost = {};
 
 	$scope.createPost = (post) => {
-		Posts.save({
+		$scope.newPostPromise = Posts.save({
 			post_name: post.title,
 			post_text: post.text,
 			post_tags: post.tags

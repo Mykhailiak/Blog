@@ -26,7 +26,8 @@
 					button.btn.btn-success(translate="POST" ng-disabled="writePost.$invalid")
 				div.error-box-form(ng-show="writePost.title.$dirty && writePost.text.$invalid" ng-messages="writePost.$error")
 					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-		post-list(list="user.posts")
+		div(cg-busy="newPostPromise")
+			post-list(list="user.posts")
 	.col-md-3
 		.well
 			h4(translate="SEARCH")
