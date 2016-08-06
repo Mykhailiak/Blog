@@ -36,5 +36,6 @@
 	"COMMENT": "Comment",
 	"WRITE_TITLE_COMMENT": "Write title of comment",
 	"WRITE_POST_TITLE": "Write title of post",
-	"WRITE_TAGS": "Write tags"
+	"WRITE_TAGS": "Write tags",
+	"SETTINGS": "Settings"
 }

@@ -8,11 +8,6 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 	}).catch((err) => {
 		console.error(err);
 	});
-	$scope.usersPromise = Users.query().$promise.then((data) => {
-		$scope.users = data;
-	}).catch((err) => {
-		console.error(err);
-	});
 
 	$scope.newPost = {};
 

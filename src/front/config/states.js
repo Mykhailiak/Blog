@@ -9,7 +9,8 @@ import appTpl from './../../themes/templates/application.tpl.jade';
 import mapTpl from './../../themes/templates/map.tpl.jade';
 import usersTpl from './../../themes/templates/users.tpl.jade';
 import postsTpl from './../../themes/templates/posts.tpl.jade';
-
+import accountSettTpl from './../../themes/templates/account.sett.tpl.jade';
+import accountHomeTpl from './../../themes/templates/account.home.tpl.jade';
 
 app.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
@@ -36,7 +37,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			template: signInTpl
 		})
 		.state('root.users', {
-			url: 'user',
+			url: 'users',
 			controller: 'UsersCtrl',
 			template: usersTpl
 		})
@@ -48,7 +49,18 @@ app.config(($stateProvider, $urlRouterProvider) => {
 		.state('root.account', {
 			url: 'account/:id',
 			controller: 'AccountCtrl',
-			template: accountTpl
+			template: accountTpl,
+			abstract: true
+		})
+		.state('root.account.home', {
+			url: '',
+			controller: 'AccountHomeCtrl',
+			template: accountHomeTpl
+		})
+		.state('root.account.settings', {
+			url: '/settings',
+			controller: 'AccountSettCtrl',
+			template: accountSettTpl
 		})
 		.state('root.post', {
 			url: 'post/:id',

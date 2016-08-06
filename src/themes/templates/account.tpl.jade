@@ -12,27 +12,7 @@
 			hr
 			div.text-center
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
-	.col-md-6
-		.well
-			form.write-post-form(name="writePost" ng-submit="createPost(newPost)" novalidate)
-				input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
-				textarea.form-control.cstmry-form-input(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
-				input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_TAGS' | translate}} " required ng-model="newPost.tags" name="tags")
-				.form-main-act
-					ul.widgt-adds
-						li
-							label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
-							input#post-photo.wdgt-post-photo-inpt(type="file")
-					button.btn.btn-success(translate="POST" ng-disabled="writePost.$invalid")
-				div.error-box-form(ng-show="writePost.title.$dirty && writePost.text.$invalid" ng-messages="writePost.$error")
-					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-		div(cg-busy="newPostPromise")
-			post-list(list="user.posts")
-	.col-md-3
-		.well
-			h4(translate="SEARCH")
-			hr
-		section.well.acc-users-list(cg-busy="usersPromise")
-			h4(translate="USERS")
-			hr
-			user-list(list="users")
+		div.account-settings
+			a.btn.btn-primary(ui-sref=".settings")
+				i.fa.fa-cog
+	ui-view

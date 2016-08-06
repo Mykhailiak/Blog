@@ -3,7 +3,7 @@ ul.users-list.list-group
 		article.panel.panel-default.user-item-panel
 			div.panel-heading(ng-bind-template="Role - {{user.role | role}}")
 			div.panel-body.user-item-panel-body
-				a(ng-bind="user.username" ui-sref="root.account({id: user.id})")
+				a(ng-bind="user.username" ui-sref="root.account.home({id: user.id})")
 				a(ng-bind="user.email" ng-href="mailto:{{user.email}}")
 
 div.list-unstyled(ng-if="!filteredUsers.length")

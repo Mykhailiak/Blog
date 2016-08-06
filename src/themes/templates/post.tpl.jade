@@ -7,7 +7,7 @@
 		time.text-info.visible-lg-block(ng-bind="post.date_post | date")
 		div.posted-by
 			span.text-muted(translate="POSTED_BY")
-			a(ng-bind-template="@{{post.author_post}}" ui-sref="root.account({id: post.user_post.id})")
+			a(ng-bind-template="@{{post.author_post}}" ui-sref="root.account.home({id: post.user_post.id})")
 		hr
 		p(ng-bind="post.text_post")
 		hr
