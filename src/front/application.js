@@ -11,5 +11,6 @@ export default angular.module('app', [
 	'ngMessages',
 	'pascalprecht.translate',
 	'uiGmapgoogle-maps',
-	'ngMaterial'
+	'ngMaterial',
+	'ngFileUpload'
 	]);
