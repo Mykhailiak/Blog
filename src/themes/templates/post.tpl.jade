@@ -18,7 +18,7 @@
 	.post-comments
 		h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comment.length}})")
 		.well
-			form.write-comment-form(name="writeComment" novalidate)
+			form.write-comment-form(name="writeComment" ng-submit="postComment(comment)" novalidate)
 				input.form-control.title-comment-frm(type="text" placeholder=" {{'WRITE_TITLE_COMMENT' | translate}} " required name="title" ng-model="comment.title")
 				textarea.form-control(placeholder=" {{'WRITE_COMMENT' | translate}} " required name="text" ng-model="comment.text")
 				button.btn.btn-success(translate="COMMENT" ng-disabled="writeComment.$invalid")
