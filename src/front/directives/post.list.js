@@ -9,7 +9,8 @@ app.directive('postList', () => {
 		template: postListTpl(),
 		scope: {
 			posts: '=list',
-			search: '='
+			search: '=',
+			options: '='
 		}
 	};
 });
