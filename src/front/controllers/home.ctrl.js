@@ -13,6 +13,12 @@ app.controller('HomeCtrl', ($scope, Users, Posts) => {
 		reverse: true
 	};
 
+	$scope.userOptions = {
+		limit: 5,
+		orderKey: 'user_create_date',
+		reverse: true
+	};
+
 	$scope.postsPromise = Posts.query().$promise.then((data) => {
 		$scope.posts = data;
 	}).catch((err) => {

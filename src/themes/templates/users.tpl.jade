@@ -6,6 +6,6 @@
 			div.filter-field
 				.form-group
 					input.form-control(type="text" ng-model="search.username" placeholder="{{'FILTER.FILTER_USER_NAME' | translate}}")
-				a.btn.btn-block.btn-primary(ng-class="{ 'active': !reverse }" ng-click="setReverse(reverse)") Reverse
+				a.btn.btn-block.btn-primary(ng-class="{ 'active': !userOptions.reverse }" ng-click="setReverse(userOptions.reverse)") Reverse
 	.col-md-8.col-md-offset-1(cg-busy="usersPromise")
-		user-list(list="users" search="search" reverse="reverse")
+		user-list(list="users" search="search" options="userOptions")

@@ -8,11 +8,14 @@ app.controller('UsersCtrl', ($scope, Users) => {
 		console.error(err);
 	});
 
-	$scope.reverse = true;
+	$scope.userOptions = {
+		limit: 10,
+		orderKey: 'user_create_date',
+		reverse: true
+	};
 
 	$scope.setReverse = (value) => {
-		$scope.reverse = !value;
-		console.log($scope.reverse);
+		$scope.userOptions.reverse = !value;
 	};
 
 	$scope.search = {};
