@@ -15,9 +15,9 @@
 	.col-md-6
 		.well
 			form.write-post-form(name="writePost" ng-submit="createPost(newPost)" novalidate)
-				input.form-control.post-title-wr(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
-				textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
-				input.form-control.post-tags-wr(type="text" placeholder=" {{'WRITE_TAGS' | translate}} " required ng-model="newPost.tags" name="tags")
+				input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
+				textarea.form-control.cstmry-form-input(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
+				input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_TAGS' | translate}} " required ng-model="newPost.tags" name="tags")
 				.form-main-act
 					ul.widgt-adds
 						li
