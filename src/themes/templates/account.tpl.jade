@@ -1,4 +1,4 @@
-.row
+.row(cg-busy="accountPromise")
 	.col-md-3
 		.well.user-widget
 			h3.text-primary: strong(ng-bind="user.username")
@@ -14,7 +14,7 @@
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
 	.col-md-6
 		.well
-			form.write-post-form(name="writePost" novalidate)
+			form.write-post-form(name="writePost" ng-submit="createPost(newPost)" novalidate)
 				input.form-control.post-title-wr(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
 				textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
 				.form-main-act
