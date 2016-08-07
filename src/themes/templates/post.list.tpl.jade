@@ -9,7 +9,7 @@ ul.posts-list.list-group
 				div.upper-part-post-f-pannel
 					span.author-post
 						i.fa.fa-user.text-info
-						a.text-info(ng-bind-template="@{{post.author_post}}")
+						a.text-info(ng-bind-template="@{{post.author_post}}" ui-sref="root.account.home({id: post.user_post.id})")
 					ul.list-inline
 						li(ng-repeat="tag in post.tag.tagname | tagsToArray")
 							a.label.label-info(ng-bind="tag")
