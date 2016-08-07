@@ -13,7 +13,7 @@
 			div.error-box-form(ng-show="writePost.title.$dirty && writePost.text.$invalid" ng-messages="writePost.$error")
 				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
 	div(cg-busy="newPostPromise")
-		post-list(list="user.posts" search="search")
+		post-list(list="user.posts" search="search" options="postOptions")
 .col-md-3
 	.well
 		h4(translate="SEARCH")
@@ -22,4 +22,4 @@
 	section.well.acc-users-list(cg-busy="usersPromise")
 		h4(translate="USERS")
 		hr
-		user-list(list="users")
+		user-list(list="users" options="userOptions")

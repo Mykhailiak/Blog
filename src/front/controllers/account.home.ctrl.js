@@ -8,5 +8,16 @@ app.controller('AccountHomeCtrl', ($scope, Users) => {
 		console.error(err);
 	});
 
+	$scope.postOptions = {
+		orderKey: 'date_post',
+		reverse: true
+	};
+
+	$scope.userOptions = {
+		limit: 5,
+		orderKey: 'user_create_date',
+		reverse: true
+	};
+
 	$scope.search = {};
 });
