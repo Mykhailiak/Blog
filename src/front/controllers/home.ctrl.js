@@ -7,6 +7,12 @@ app.controller('HomeCtrl', ($scope, Users, Posts) => {
 		console.error(err);
 	});
 
+	$scope.postsPromise = Posts.query().$promise.then((data) => {
+		$scope.posts = data;
+	}).catch((err) => {
+		console.error(err);
+	});
+
 	$scope.postOptions = {
 		limit: 5,
 		orderKey: 'date_post',
@@ -19,9 +25,4 @@ app.controller('HomeCtrl', ($scope, Users, Posts) => {
 		reverse: true
 	};
 
-	$scope.postsPromise = Posts.query().$promise.then((data) => {
-		$scope.posts = data;
-	}).catch((err) => {
-		console.error(err);
-	});
 });
