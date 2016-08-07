@@ -13,7 +13,7 @@
 			hr
 			div.icon-user-select
 				icon-select.text-info(status="user.role")
-				span.user-role(ng-bind="user.role | role")
+				span.user-role(ng-bind-template="{{(user.role | role | uppercase) | translate}}")
 			hr
 			span
 				time(ng-bind-template="{{'CREATED_AT' | translate}}: {{user.user_create_date | amDateFormat : 'DD MMM, YY'}} ")
