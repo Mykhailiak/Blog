@@ -38,5 +38,6 @@
 	"WRITE_POST_TITLE": "Write title of post",
 	"WRITE_TAGS": "Write tags",
 	"SETTINGS": "Settings",
-	"ACCOUNT": "Account"
+	"ACCOUNT": "Account",
+	"CREATED_AT": "Created at"
 }

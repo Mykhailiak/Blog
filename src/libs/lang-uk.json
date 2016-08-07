@@ -38,5 +38,6 @@
 	"WRITE_POST_TITLE": "Введіть заголовок посту",
 	"WRITE_TAGS": "Введіть теги",
 	"SETTINGS": "Налаштування",
-	"ACCOUNT": "Профіль"
+	"ACCOUNT": "Профіль",
+	"CREATED_AT": "Створено"
 }

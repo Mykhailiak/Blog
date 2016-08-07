@@ -7,6 +7,6 @@ app.config(($translateProvider) => {
 		suffix: '.json'
 	});
 
-	$translateProvider.preferredLanguage('ua');
+	$translateProvider.preferredLanguage('uk');
 
 });

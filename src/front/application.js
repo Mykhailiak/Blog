@@ -12,5 +12,6 @@ export default angular.module('app', [
 	'pascalprecht.translate',
 	'uiGmapgoogle-maps',
 	'ngMaterial',
-	'ngFileUpload'
+	'ngFileUpload',
+	'angularMoment'
 	]);

@@ -14,4 +14,5 @@ import 'angular-aria';
 import 'angular-messages';
 import 'angular-material';
 import 'angular-file-upload';
+import 'angular-moment';
 import './resources/';
