@@ -1,5 +1,5 @@
 ul.users-list.list-group
-	li.list-group-item.user-list-group-item(ng-repeat="user in filteredUsers = (users | filter : search | limitTo : options.limit | orderBy : options.orderKey : options.reverse)")
+	li.list-group-item.user-list-group-item(ng-repeat="user in filteredUsers = (users | filter : search | orderBy : options.orderKey : options.reverse | limitTo : options.limit)")
 		article.panel.panel-default.user-item-panel
 			div.panel-heading(ng-bind-template="Role - {{user.role | role}}")
 			div.panel-body.user-item-panel-body

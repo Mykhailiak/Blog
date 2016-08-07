@@ -9,7 +9,6 @@ app.controller('UsersCtrl', ($scope, Users) => {
 	});
 
 	$scope.userOptions = {
-		limit: 10,
 		orderKey: 'user_create_date',
 		reverse: true
 	};
