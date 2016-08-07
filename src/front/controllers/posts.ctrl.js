@@ -8,6 +8,11 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 		console.error(err);
 	});
 
+	$scope.postOptions = {
+		orderKey: 'date_post',
+		reverse: true
+	};
+
 	$scope.search = {};
 
 });
