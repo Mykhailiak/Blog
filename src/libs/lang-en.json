@@ -39,5 +39,7 @@
 	"WRITE_TAGS": "Write tags",
 	"SETTINGS": "Settings",
 	"ACCOUNT": "Account",
-	"CREATED_AT": "Created at"
+	"CREATED_AT": "Created at",
+	"EDIT": "Edit",
+	"DELETE": "Delete"
 }
