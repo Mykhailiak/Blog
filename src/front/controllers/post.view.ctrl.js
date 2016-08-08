@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('PostCtrl', ($scope, Posts, Comments, $stateParams, $state) => {
+app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) => {
 	$scope.postsPromise = Posts.get({id: $stateParams.id}).$promise.then((data) => {
 		$scope.post = data;
 		console.log(data);
