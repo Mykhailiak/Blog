@@ -41,5 +41,8 @@
 	"ACCOUNT": "Account",
 	"CREATED_AT": "Created at",
 	"EDIT": "Edit",
-	"DELETE": "Delete"
+	"DELETE": "Delete",
+	"USER": "User",
+	"ADMIN": "Admin",
+	"ROLE": "Role"
 }

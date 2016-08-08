@@ -1,6 +1,6 @@
 import app from './../application';
 
-import postListTpl from './../../themes/templates/post.list.tpl.jade';
+import postListTpl from './../../themes/templates/directives/post.list.tpl.jade';
 
 
 app.directive('postList', () => {

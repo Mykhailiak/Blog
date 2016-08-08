@@ -1,16 +1,16 @@
 import app from './../application';
 
 import homeTpl from './../../themes/templates/home.tpl.jade';
-import signUpTpl from './../../themes/templates/signup.tpl.jade';
-import signInTpl from './../../themes/templates/signin.tpl.jade';
-import accountTpl from './../../themes/templates/account.tpl.jade';
-import postTpl from './../../themes/templates/post.tpl.jade';
+import signUpTpl from './../../themes/templates/sign/signup.tpl.jade';
+import signInTpl from './../../themes/templates/sign/signin.tpl.jade';
+import accountTpl from './../../themes/templates/account/account.tpl.jade';
+import postTpl from './../../themes/templates/posts/post.tpl.jade';
 import appTpl from './../../themes/templates/application.tpl.jade';
 import mapTpl from './../../themes/templates/map.tpl.jade';
 import usersTpl from './../../themes/templates/users.tpl.jade';
-import postsTpl from './../../themes/templates/posts.tpl.jade';
-import accountSettTpl from './../../themes/templates/account.sett.tpl.jade';
-import accountHomeTpl from './../../themes/templates/account.home.tpl.jade';
+import postsTpl from './../../themes/templates/posts/posts.tpl.jade';
+import accountSettTpl from './../../themes/templates/account/account.sett.tpl.jade';
+import accountHomeTpl from './../../themes/templates/account/account.home.tpl.jade';
 
 app.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');

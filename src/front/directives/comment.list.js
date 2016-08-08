@@ -1,6 +1,6 @@
 import app from './../application';
 
-import commentTpl from './../../themes/templates/comment.list.tpl.jade';
+import commentTpl from './../../themes/templates/directives/comment.list.tpl.jade';
 
 
 app.directive('commentList', () => {
@@ -11,4 +11,4 @@ app.directive('commentList', () => {
 			comments: '='
 		}
 	}
-})
+});
