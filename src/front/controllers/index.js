@@ -10,3 +10,4 @@ import './posts.ctrl';
 import './account.sett.ctrl';
 import './account.home.ctrl';
 import './post.edit.ctrl';
+import './post.list.ctrl';

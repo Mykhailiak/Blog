@@ -11,6 +11,7 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 
 	$scope.newPost = {};
 
+
 	$scope.createPost = (post) => {
 		$scope.newPostPromise = Posts.save({
 			post_name: post.title,
@@ -22,5 +23,9 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 			console.error(err);
 		});
 	};
+
+	$scope.$on('deletePost', function(e, deleted) {
+		$scope.user.posts.splice($scope.user.posts.findIndex((post) => post.id === deleted.id), 1);
+	});
 
 });

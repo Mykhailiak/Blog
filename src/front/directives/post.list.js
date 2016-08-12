@@ -11,6 +11,7 @@ app.directive('postList', () => {
 			posts: '=list',
 			search: '=',
 			options: '='
-		}
+		},
+		controller: 'PostListCtrl'
 	};
 });

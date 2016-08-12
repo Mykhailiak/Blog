@@ -8,7 +8,7 @@ ul.posts-list.list-group
 							i.text-muted.fa.fa-angle-down
 						ul(uib-dropdown-menu)
 							li: a(translate="EDIT")
-							li: a(translate="DELETE")
+							li: a(translate="DELETE" ng-click="deletePost(post.id)")
 					h4: a(ng-bind="post.name_post", ui-sref="root.post.view({id: post.id})")
 				time.text-info(am-time-ago="post.date_post | date")
 			.panel-body(ng-bind="post.text_post | truncate : 150")
