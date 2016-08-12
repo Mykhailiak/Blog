@@ -9,9 +9,6 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 		console.error(err);
 	});
 
-	$scope.newPost = {};
-
-
 	$scope.createPost = (post) => {
 		$scope.newPostPromise = Posts.save({
 			post_name: post.title,
@@ -19,6 +16,7 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 			post_tags: post.tags
 		}).$promise.then((post) => {
 			$scope.user.posts.push(post);
+			$scope.$broadcast('formPristine');
 		}).catch((err) => {
 			console.error(err);
 		});

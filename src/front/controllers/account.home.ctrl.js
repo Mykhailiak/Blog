@@ -20,4 +20,9 @@ app.controller('AccountHomeCtrl', ($scope, Users) => {
 	};
 
 	$scope.search = {};
+
+	$scope.$on('formPristine', (e, args) => {
+		$scope.newPost = {};
+		$scope.writePost.$setPristine();
+	});
 });

@@ -9,8 +9,6 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 		console.error(err);
 	});
 
-	$scope.comment = {};
-
 	$scope.postComment = (data) => {
 		let newComment = {
 			post_for_comment: $scope.post.id,
@@ -20,6 +18,8 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 
 		$scope.commentPromise = Comments.save(newComment).$promise.then((comment) => {
 			$scope.post.comment.push(comment);
+			$scope.comment = {};
+			$scope.writeComment.$setPristine();
 		}).catch((err) => {
 			console.error(err);
 		});
