@@ -25,5 +25,4 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 	$scope.$on('deletePost', function(e, deleted) {
 		$scope.user.posts.splice($scope.user.posts.findIndex((post) => post.id === deleted.id), 1);
 	});
-
 });

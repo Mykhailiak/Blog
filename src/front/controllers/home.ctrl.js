@@ -24,5 +24,4 @@ app.controller('HomeCtrl', ($scope, Users, Posts) => {
 		orderKey: 'user_create_date',
 		reverse: true
 	};
-
 });

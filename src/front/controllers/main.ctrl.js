@@ -23,5 +23,4 @@ app.controller('MainCtrl', ($scope, $translate, amMoment, backEndUrl, $rootScope
 			});
 		}
 	};
-
 });

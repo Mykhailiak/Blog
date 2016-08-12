@@ -25,5 +25,4 @@ app.controller('AccountSettCtrl', ($scope, Users, $state, $stateParams) => {
 			});
 		}
 	};
-
 });

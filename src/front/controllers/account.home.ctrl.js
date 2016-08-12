@@ -19,8 +19,6 @@ app.controller('AccountHomeCtrl', ($scope, Users) => {
 		reverse: true
 	};
 
-	$scope.search = {};
-
 	$scope.$on('formPristine', (e, args) => {
 		$scope.newPost = {};
 		$scope.writePost.$setPristine();

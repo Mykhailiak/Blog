@@ -16,7 +16,4 @@ app.controller('UsersCtrl', ($scope, Users) => {
 	$scope.setReverse = (value) => {
 		$scope.userOptions.reverse = !value;
 	};
-
-	$scope.search = {};
-
 });

@@ -12,7 +12,4 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 		orderKey: 'date_post',
 		reverse: true
 	};
-
-	$scope.search = {};
-
 });

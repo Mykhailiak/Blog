@@ -10,13 +10,12 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 	});
 
 	$scope.postComment = (data) => {
-		let newComment = {
+
+		$scope.commentPromise = Comments.save({
 			post_for_comment: $scope.post.id,
 			comment_name: data.title,
 			comment_text: data.text
-		};
-
-		$scope.commentPromise = Comments.save(newComment).$promise.then((comment) => {
+		}).$promise.then((comment) => {
 			$scope.post.comment.push(comment);
 			$scope.comment = {};
 			$scope.writeComment.$setPristine();
