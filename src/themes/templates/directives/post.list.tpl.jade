@@ -2,13 +2,14 @@ ul.posts-list.list-group
 	li.list-group-item.pre-post-list-group-item(ng-repeat="post in filteredPosts = (posts | filter : search | orderBy : options.orderKey : options.reverse | limitTo : options.limit)")
 		div.panel.post-pre-panel
 			.panel-heading
-				div.auth-action(uib-dropdown)
-					button.btn.btn-default(uib-dropdown-toggle)
-						i.text-muted.fa.fa-angle-down
-					ul(uib-dropdown-menu)
-						li: a(translate="EDIT")
-						li: a(translate="DELETE")
-				h4: a(ng-bind="post.name_post", ui-sref="root.post.view({id: post.id})")
+				.meta-data-panel
+					div.auth-action(uib-dropdown)
+						button.btn.btn-default(uib-dropdown-toggle)
+							i.text-muted.fa.fa-angle-down
+						ul(uib-dropdown-menu)
+							li: a(translate="EDIT")
+							li: a(translate="DELETE")
+					h4: a(ng-bind="post.name_post", ui-sref="root.post.view({id: post.id})")
 				time.text-info(am-time-ago="post.date_post | date")
 			.panel-body(ng-bind="post.text_post | truncate : 150")
 			.panel-footer.pre-post-f-pannel
