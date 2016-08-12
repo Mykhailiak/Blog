@@ -8,6 +8,7 @@
 		div.posted-by
 			span.text-muted(translate="POSTED_BY")
 			a(ng-bind-template="@{{post.author_post}}" ui-sref="root.account.home({id: post.user_post.id})")
+		a(ui-sref="^.edit" translate="EDIT")
 		hr
 		p(ng-bind="post.text_post")
 		hr
