@@ -4,6 +4,7 @@ var webpack = require('webpack'),
 	LiverReloadPlugin = require('webpack-livereload-plugin'),
 	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 	autoprefixer = require('autoprefixer'),
+	clearFix = require('postcss-clearfix'),
 	path = require('path');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -27,9 +28,9 @@ module.exports = {
 		loaders: [
 			{test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'ng-annotate!babel?presets[]=es2015'},
 			{test: /\.html$/, loader: 'ngtemplate!html'},
-			{test: /\.jade$/, loader: 'jade'},	//'ngtemplate!html!apply!jade', 'ngtemplate!html!jade', 'ngtemplate!html!apply!jade-html-loader'
+			{test: /\.jade$/, loader: 'jade'},
 			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css!postcss')},
-			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!postcss!csslint?configFile=./configs/csslint!stylus?resolve url')},
+			{test: /\.styl$/, loader: ExtractTextPlugin.extract('css!csslint?configFile=./configs/csslint!postcss!stylus?resolve url')},
 			{test: /\.png$/, loader: 'url?limit=100000'},
 			{test: /\.gif$/, loader: 'url?limit=10000'},
 			{test: /\.json$/, loader: 'json'},
@@ -37,7 +38,10 @@ module.exports = {
 		]
 	},
 	postcss: function () {
-		return [autoprefixer({browsers: ['last 3 version']})];
+		return [
+				autoprefixer({browsers: ['last 3 version']}),
+				clearFix
+		];
 	},
 	plugins: [
 		new ExtractTextPlugin('styles.css', {allChunks: true}),
