@@ -44,5 +44,6 @@
 	"DELETE": "Delete",
 	"USER": "User",
 	"ADMIN": "Admin",
-	"ROLE": "Role"
+	"ROLE": "Role",
+	"SAVE": "Save"
 }

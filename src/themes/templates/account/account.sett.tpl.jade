@@ -1,3 +1,29 @@
 div.col-md-9
+	h1 {{title}}
 	h4(translate="SETTINGS")
 	hr
+	form.account-settings(name="userSettings" novalidate ng-submit="updateUser(settings, userSettings.$valid)")
+		div.form-group
+			label.col-sm-2.controll-label(for="accSettName" translate="NAME")
+			div.col-sm-10
+				input#accSettName.form-control(type="text" name="name" ng-model="settings.name" required)
+				div.error-box-form(ng-show="userSettings.name.$dirty && userSettings.name.$invalid" ng-messages="userSettings.name.$error")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+					hr
+		div.form-group
+			label.col-sm-2.controll-label(for="accSettEmail") Email
+			div.col-sm-10
+				input#accSettEmail.form-control(type="email" name="email" ng-model="settings.email" required)
+				div.error-box-form(ng-show="userSettings.email.$dirty && userSettings.email.$invalid" ng-messages="userSettings.email.$error")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+					p.text-danger(ng-message="email" translate="WARNS.EMAIL_MESS")
+					hr
+		div.form-group
+			label.col-sm-2.controll-label(for="accSettPass" translate="PASSWORD")
+			div.col-sm-10
+				input#accSettPass.form-control(type="text" name="password" minlength="3" ng-model="settings.password" required)
+				div.error-box-form(ng-show="userSettings.password.$dirty && userSettings.password.$invalid" ng-messages="userSettings.password.$error")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{length: '3'}")
+					hr
+		button.btn.btn-primary.pull-right(translate="SAVE" ng-disabled="userSettings.$invalid")
