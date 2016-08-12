@@ -16,6 +16,7 @@ app.controller('MainCtrl', ($scope, $translate, amMoment, backEndUrl, $rootScope
 		if(angular.isDefined(user)) {
 			$http.get(`${backEndUrl}/user_out/${user.id}`).then((data) => {
 				console.log(data);	// for uncertain answers
+				localStorage.removeItem('apiKey');
 				$rootScope.authUser = null;
 			}).catch((err) => {
 				console.error(err);
