@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
+app.controller('AccountCtrl', ($scope, $state, $stateParams, Users, Posts) => {
 	$scope.accountPromise = Users.get({id: $stateParams.id}).$promise.then((user) => {
 		$scope.user = user;
 		console.log(user);
@@ -19,6 +19,14 @@ app.controller('AccountCtrl', ($scope, $stateParams, Users, Posts) => {
 			$scope.$broadcast('formPristine');
 		}).catch((err) => {
 			console.error(err);
+		});
+	};
+
+	$scope.deleteUser = (id) => {
+		Users.delete({id: id}).$promise.then((data) => {
+			$state.go('root.home');
+		}).catch((err) => {
+			console.log(err);
 		});
 	};
 

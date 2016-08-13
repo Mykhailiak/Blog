@@ -20,4 +20,5 @@
 			hr
 			div.text-center
 				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
+		a.btn.btn-danger.btn-block(ng-click="deleteUser(user.id)" translate="DELETE_ACCOUNT")
 	ui-view
