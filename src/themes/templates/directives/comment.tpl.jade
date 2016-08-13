@@ -1,0 +1,21 @@
+.panel.panel-default
+	.panel-body
+		header
+			.comment-data
+				span(ng-bind="comment.author_comment")
+				time.comment-time(am-time-ago="comment.date_comment | date")
+		.comment-body
+			h5.comment-title(ng-bind="comment.name_comment")
+			p(ng-bind="comment.text_comment")
+		.comment-body
+			form(name="commentEditForm" novalidate ng-submit="editComment(editCommentData, commentEditForm.$valid)")
+				h5.text-muted(translate="EDIT")
+				.form-group
+					input.form-control(type="text" name="commentTitle" ng-model="editCommentData.title" placeholder="{{'WRITE_TITLE_COMMENT' | translate}}" required)
+					div.error-box-form(ng-show="commentEditForm.commentTitle.$dirty && commentEditForm.commentTitle.$invalid" ng-messages="commentEditForm.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				.form-group
+					input.form-control(type="text" name="commentText" ng-model="editCommentData.text" placeholder="{{'WRITE_COMMENT' | translate}}" required)
+					div.error-box-form(ng-show="commentEditForm.commentText.$dirty && commentEditForm.commentText.$invalid" ng-messages="commentEditForm.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				button.btn.btn-success(translate="SAVE" ng-disabled="commentEditForm.$invalid")
