@@ -9,6 +9,14 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 		console.error(err);
 	});
 
+	$scope.deletePost = (id) => {
+		Posts.delete({id: id}).$promise.then((data) => {
+			$state.go('root.home');
+		}).catch((err) => {
+			console.log(err);
+		});
+	};
+
 	$scope.postComment = (data) => {
 
 		$scope.commentPromise = Comments.save({
