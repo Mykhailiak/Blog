@@ -4,7 +4,7 @@ module.factory('Posts', ($resource, backEndUrl) => {
 	return $resource(`${backEndUrl}/post/:id`, {
 		id: '@id'
 	}, {
-		updata: {
+		update: {
 			method: 'PUT'
 		}
 	});
