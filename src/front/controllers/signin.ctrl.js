@@ -1,7 +1,9 @@
 import app from './../application';
 
 
-app.controller('SignInCtrl', ($scope, $http, backEndUrl, $rootScope) => {
+app.controller('SignInCtrl', ($scope, $rootScope, $http, backEndUrl, socialSignUrl) => {
+	$scope.socialUrl = socialSignUrl;
+
 	$scope.authUser = (user, status) => {
 		if(status) {
 			$http.post(`${backEndUrl}/authorization`, {

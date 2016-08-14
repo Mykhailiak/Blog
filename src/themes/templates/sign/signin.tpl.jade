@@ -3,6 +3,9 @@
 		hr
 		h3.text-center.text-capitalize(translate="SIGN.SIGN_IN")
 		hr
+		ul.list-inline
+			li: a(ng-href="{{socialUrl.vk}}"): i.fa.fa-vk
+			li: a(ng-href="{{socialUrl.google}}"): i.fa.fa-google-plus
 		form(name="signInForm", novalidate, ng-submit="authUser(user, signInForm.$valid)")
 			.form-group
 				label(for="userName" translate="NAME")
