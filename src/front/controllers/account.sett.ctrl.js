@@ -3,7 +3,7 @@ import app from './../application';
 
 app.controller('AccountSettCtrl', ($scope, Users, $state, $stateParams) => {
 
-	Users.get({id: $stateParams.id}).$promise.then((user) => {
+	$scope.accountSettingsPromise = Users.get({id: $stateParams.id}).$promise.then((user) => {
 		$scope.settings = {
 			name: user.username,
 			email: user.email,

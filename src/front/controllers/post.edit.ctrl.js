@@ -4,7 +4,7 @@ import app from './../application';
 app.controller('PostEditCtrl', ($scope, $state, $stateParams, Posts) => {
 	$scope.title = 'Post Edit state';
 
-	Posts.get({id: $stateParams.id}).$promise.then((post) => {
+	$scope.postEditPromise = Posts.get({id: $stateParams.id}).$promise.then((post) => {
 		$scope.post = {
 			title: post.name_post,
 			text: post.text_post,
