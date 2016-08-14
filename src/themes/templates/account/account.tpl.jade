@@ -9,16 +9,16 @@
 					div.col-md-9
 						a.btn.btn-info.btn-block(ui-sref=".home" translate="ACCOUNT")
 		.well.user-widget
-			h3.text-primary: strong(ng-bind="user.username")
+			h3.text-primary: strong(ng-bind="user.user_name")
 			hr
 			div.icon-user-select
-				icon-select.text-info(status="user.role")
-				span.user-role(ng-bind-template="{{(user.role | role | uppercase) | translate}}")
+				icon-select.text-info(status="user.user_role")
+				span.user-role(ng-bind-template="{{(user.user_role | role | uppercase) | translate}}")
 			hr
 			span
 				time(ng-bind-template="{{'CREATED_AT' | translate}}: {{user.user_create_date | amDateFormat : 'DD MMM, YY'}} ")
 			hr
 			div.text-center
-				a(ng-href="mailto:{{user.email}}"): i(ng-bind="user.email")
+				a(ng-href="mailto:{{user.user_mail}}" ng-bind="user.user_mail")
 		a.btn.btn-danger.btn-block(ng-click="deleteUser(user.id)" translate="DELETE_ACCOUNT")
 	ui-view

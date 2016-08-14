@@ -1,10 +1,10 @@
 ul.users-list.list-group
 	li.list-group-item.user-list-group-item(ng-repeat="user in filteredUsers = (users | filter : search | orderBy : options.orderKey : options.reverse | limitTo : options.limit)")
 		article.panel.panel-default.user-item-panel
-			div.panel-heading(ng-bind-template="{{'ROLE' | translate}} - {{(user.role | role | uppercase) | translate}}")
+			div.panel-heading(ng-bind-template="{{'ROLE' | translate}} - {{(user.user_role | role | uppercase) | translate}}")
 			div.panel-body.user-item-panel-body
-				a(ng-bind="user.username" ui-sref="root.account.home({id: user.id})")
-				a(ng-bind="user.email" ng-href="mailto:{{user.email}}")
+				a(ng-bind="user.user_name" ui-sref="root.account.home({id: user.id})")
+				a(ng-bind="user.user_mail" ng-href="mailto:{{user.user_mail}}")
 
 div.list-unstyled(ng-if="!filteredUsers.length")
 	p.text-center.lead(translate="USERS_NOT_FOUND")

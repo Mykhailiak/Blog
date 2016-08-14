@@ -2,7 +2,7 @@
 	.panel-body
 		header
 			.comment-data
-				span(ng-bind="comment.author_comment")
+				a(ui-sref="root.account.home({id: comment.user_comment_id})" ng-bind="comment.author_comment")
 				time.comment-time(am-time-ago="comment.date_comment | date")
 		div(ng-switch on="editStatus")
 			.comment-body(ng-switch-when="view")

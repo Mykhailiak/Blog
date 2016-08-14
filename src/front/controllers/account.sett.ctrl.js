@@ -5,9 +5,9 @@ app.controller('AccountSettCtrl', ($scope, Users, $state, $stateParams) => {
 
 	$scope.accountSettingsPromise = Users.get({id: $stateParams.id}).$promise.then((user) => {
 		$scope.settings = {
-			name: user.username,
-			email: user.email,
-			password: user.password
+			name: user.user_name,
+			email: user.user_mail,
+			password: user.user_password
 		}
 	});
 
