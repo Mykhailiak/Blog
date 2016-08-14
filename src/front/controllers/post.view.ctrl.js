@@ -17,6 +17,10 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 		});
 	};
 
+	$scope.$on('commentDelete', (e, deleted) => {
+		$scope.post.comment.splice($scope.post.comment.findIndex((comment) => comment.id === deleted.id), 1);
+	});
+
 	$scope.postComment = (data) => {
 
 		$scope.commentPromise = Comments.save({

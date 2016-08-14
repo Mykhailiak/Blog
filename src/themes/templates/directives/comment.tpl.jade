@@ -8,8 +8,13 @@
 			.comment-body(ng-switch-when="view")
 				.comment-body-head
 					h5.comment-title(ng-bind="comment.name_comment")
-					a.edit-icon(ng-click="editToggle(editStatus)")
-						i.fa.fa-pencil-square-o
+					ul.list-inline.comment-act
+						li
+							a.edit-icon.text-info(ng-click="editToggle(editStatus)" uib-tooltip="{{'EDIT' | translate}}")
+								i.fa.fa-pencil-square-o
+						li
+							a.remove-icon.text-info(ng-click="removeComment(comment.id)" uib-tooltip="{{'DELETE' | translate}}")
+								i.fa.fa-times
 				p(ng-bind="comment.text_comment")
 			.comment-body(ng-switch-when="edit")
 				form.commentEditForm(name="commentEditForm" novalidate ng-submit="editComment(editCommentData, commentEditForm.$valid)")

@@ -2,15 +2,30 @@ import app from './../application';
 
 
 app.controller('CommentCtrl', ($scope, Comments) => {
-	$scope.editStatus = 'view';
+	$scope.statusEdits = {
+		view: 'view',
+		edit: 'edit'
+	};
+
+	$scope.editStatus = $scope.statusEdits.view;
 
 	$scope.editToggle = (value) => {
-		return $scope.editStatus = $scope.editStatus === 'view' ? 'edit' : 'view';
+		return $scope.editStatus = $scope.editStatus === $scope.statusEdits.view ? $scope.statusEdits.edit : $scope.statusEdits.view;
 	};
 
 	$scope.editCommentData = {
 		title: $scope.comment.name_comment,
 		text: $scope.comment.text_comment
+	};
+
+	$scope.removeComment = (id) => {
+		Comments.delete({id: id}).$promise.then((comment) => {
+			$scope.$emit('commentDelete', {
+				comment
+			});
+		}).catch((err) => {
+			console.error(err);
+		});
 	};
 
 	$scope.editComment = (data, status) => {
