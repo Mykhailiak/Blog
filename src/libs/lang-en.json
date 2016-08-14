@@ -46,5 +46,6 @@
 	"ADMIN": "Admin",
 	"ROLE": "Role",
 	"SAVE": "Save",
-	"DELETE_ACCOUNT": "Delete account"
+	"DELETE_ACCOUNT": "Delete account",
+	"CANCEL": "Cancel"
 }

@@ -2,6 +2,12 @@ import app from './../application';
 
 
 app.controller('CommentCtrl', ($scope, Comments) => {
+	$scope.editStatus = 'view';
+
+	$scope.editToggle = (value) => {
+		return $scope.editStatus = $scope.editStatus === 'view' ? 'edit' : 'view';
+	};
+
 	$scope.editCommentData = {
 		title: $scope.comment.name_comment,
 		text: $scope.comment.text_comment
@@ -17,6 +23,7 @@ app.controller('CommentCtrl', ($scope, Comments) => {
 					comment_name: data.comment_name,
 					comment_text: data.comment_text
 				}
+				$scope.editStatus = 'view';
 			}).catch((err) => {
 				console.error(err);
 			});
