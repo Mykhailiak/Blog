@@ -47,5 +47,6 @@
 	"ROLE": "Role",
 	"SAVE": "Save",
 	"DELETE_ACCOUNT": "Delete account",
-	"CANCEL": "Cancel"
+	"CANCEL": "Cancel",
+	"FILE_LESS": "File must be size to {{$errorParam}}"
 }

@@ -1,6 +1,6 @@
 .col-md-6
 	.well
-		form.write-post-form(name="writePost" ng-submit="createPost(newPost)" novalidate)
+		form.write-post-form(name="writePost" enctype="multipart/form-data" ng-submit="createPost(newPost)" novalidate)
 			.form-group
 				input.form-control(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
 				div.error-box-form(ng-show="writePost.title.$dirty && writePost.title.$invalid" ng-messages="writePost.$error")
@@ -15,8 +15,11 @@
 				ul.widgt-adds
 					li
 						label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
-						input#post-photo.wdgt-post-photo-inpt(type="file")
+						input#post-photo.wdgt-post-photo-inpt(type="file" ngf-select ngf-model-invalid="errorFile" ng-model="newPost.image" name="image" accept="image/*" ngf-max-size="2MB")
 				button.btn.btn-success(translate="POST" ng-disabled="writePost.$invalid")
+			img.img-responsive.img-roundedpost-image-prev(ng-show="writePost.image.$valid" ngf-thumbnail="newPost.image")
+			div.error-box-form(ng-show="!!errorFile.$error" ng-messages="errorFile.$errorMessages")
+				p.text-danger(ng-message="maxSize" translate="FILE_LESS" translate-values="{{errorFile}}")
 	div(cg-busy="newPostPromise")
 		post-list(list="user.posts" search="search" options="postOptions")
 .col-md-3
