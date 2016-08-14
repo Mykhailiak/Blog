@@ -1,13 +1,16 @@
 .col-md-6
 	.well
 		form.write-post-form(name="writePost" ng-submit="createPost(newPost)" novalidate)
-			input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
-			div.error-box-form(ng-show="writePost.title.$dirty && writePost.title.$invalid" ng-messages="writePost.$error")
-				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-			textarea.form-control.cstmry-form-input(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
-			div.error-box-form(ng-show="writePost.text.$dirty && writePost.text.$invalid" ng-messages="writePost.$error")
+			.form-group
+				input.form-control(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")
+				div.error-box-form(ng-show="writePost.title.$dirty && writePost.title.$invalid" ng-messages="writePost.$error")
 					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-			input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_TAGS' | translate}} " required ng-model="newPost.tags" name="tags")
+			.form-group
+				textarea.form-control(placeholder=" {{'WRITE_POST' | translate}} " required ng-model="newPost.text" name="text")
+				div.error-box-form(ng-show="writePost.text.$dirty && writePost.text.$invalid" ng-messages="writePost.$error")
+					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+			.form-group
+				input.form-control(type="text" placeholder=" {{'WRITE_TAGS' | translate}} " required ng-model="newPost.tags" name="tags")
 			.form-main-act
 				ul.widgt-adds
 					li

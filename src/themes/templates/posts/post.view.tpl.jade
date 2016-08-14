@@ -24,12 +24,14 @@
 		h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comment.length}})")
 		.well
 			form.write-comment-form(name="writeComment" ng-submit="postComment(comment)" novalidate)
-				input.form-control.cstmry-form-input(type="text" placeholder=" {{'WRITE_TITLE_COMMENT' | translate}} " required name="title" ng-model="comment.title")
-				div.error-box-form(ng-show="writeComment.title.$dirty && writeComment.title.$invalid" ng-messages="writeComment.$error")
-					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-				textarea.form-control.cstmry-form-input(placeholder=" {{'WRITE_COMMENT' | translate}} " required name="text" ng-model="comment.text")
-				div.error-box-form(ng-show="writeComment.text.$dirty && writeComment.text.$invalid" ng-messages="writeComment.$error")
-					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				.form-group
+					input.form-control(type="text" placeholder=" {{'WRITE_TITLE_COMMENT' | translate}} " required name="title" ng-model="comment.title")
+					div.error-box-form(ng-show="writeComment.title.$dirty && writeComment.title.$invalid" ng-messages="writeComment.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				.form-group
+					textarea.form-control(placeholder=" {{'WRITE_COMMENT' | translate}} " required name="text" ng-model="comment.text")
+					div.error-box-form(ng-show="writeComment.text.$dirty && writeComment.text.$invalid" ng-messages="writeComment.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
 				button.btn.btn-success(translate="COMMENT" ng-disabled="writeComment.$invalid")
 		.div(cg-busy="commentPromise")
 			comment-list(comments="post.comment")
