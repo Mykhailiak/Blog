@@ -4,10 +4,10 @@
 		hr
 		h3.text-center(ng-bind="post.name_post")
 		hr
-		time.text-info.visible-lg-block(ng-bind-template="{{post.date_post | amDateFormat : 'D MMMM, YYYY'}} ")
+		time.text-info.visible-lg-block(ng-bind-template="{{post.data_post | amDateFormat : 'D MMMM, YYYY'}} ")
 		div.posted-by
 			span.text-muted(translate="POSTED_BY")
-			a(ng-bind-template="@{{post.author_post}}" ui-sref="root.account.home({id: post.user_post.id})")
+			a(ng-bind-template="@{{post.author_post}}" ui-sref="root.account.home({id: post.user_post_id})")
 		ul.list-inline
 			li
 				a(ui-sref="^.edit" translate="EDIT")
@@ -17,11 +17,11 @@
 		p(ng-bind="post.text_post")
 		hr
 		ul.list-inline
-			li(ng-repeat="tag in post.tag.tagname | tagsToArray")
+			li(ng-repeat="tag in post.post_tags | tagsToArray")
 				a.label.label-info(ng-bind="tag")
 		hr
 	.post-comments
-		h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comment.length}})")
+		h4.text-danger(ng-bind-template="{{'COMMENTS_TITLE' | translate}} ({{post.comments.length}})")
 		.well
 			form.write-comment-form(name="writeComment" ng-submit="postComment(comment)" novalidate)
 				.form-group
@@ -34,5 +34,5 @@
 						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
 				button.btn.btn-success(translate="COMMENT" ng-disabled="writeComment.$invalid")
 		.div(cg-busy="commentPromise")
-			comment-list(comments="post.comment")
+			comment-list(comments="post.comments")
 
