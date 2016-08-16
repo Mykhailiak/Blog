@@ -1,10 +1,10 @@
 import app from './../application';
 
 
-app.factory('AuthService', ($rootScope, $http, backEndUrl) => {
+app.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 	return {
 		login(credentials) {
-			return $http.post(`${backEndUrl}/authorization`, credentials)
+			return $http.post(`${domainUrl}/authorization`, credentials)
 				.then((data) => {
 					$rootScope.authUser = data;
 					localStorage.setItem('apiKey', data.apiKey);

@@ -1,5 +1,6 @@
 {
 	"backEndUr": "http://localhost:9000/api",
+	"domain": "http://localhost:9000",
 	"ROLES": {
 		"user": "ROLE_USER",
 		"admin": "ROLE_ADMIN"
