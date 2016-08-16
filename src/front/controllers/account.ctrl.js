@@ -17,16 +17,20 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, Users, Posts, Uploa
 			post_tags: post.tags
 		}).$promise.then((data) => {
 			post.image.upload = Upload.upload({
-				url: `${backEndUrl}/upload_file/${data.id}`,
+				url: `http://localhost:9000/upload_file/${data.id}`,
 				data: {
-					file: post.image
+					image: post.image
 				}
 			});
 
 			post.image.upload.then((response) => {
 				console.log(response.data);
 			});
+
+			return data;
+
 		}).then((post) => {
+			console.log(post);
 			$scope.user.posts.push(post);
 			$scope.$broadcast('formPristine');
 		}).catch((err) => {
