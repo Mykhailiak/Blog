@@ -13,5 +13,13 @@ export default angular.module('app', [
 	'uiGmapgoogle-maps',
 	'ngMaterial',
 	'ngFileUpload',
-	'angularMoment'
-	]);
+	'angularMoment',
+	'permission'
+	]).run(($rootScope, PermRoleStore) => {
+		$rootScope.authUser = {
+			user_role: 'ROLE_ADMIN'
+		};
+		PermRoleStore.defineRole('ROLE_USER', (roleName, transitionProperties) => {
+			$rootScope.authUser.user_role === roleName;
+		});
+	});

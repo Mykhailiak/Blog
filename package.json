@@ -36,6 +36,7 @@
     "angular-aria": "./bower_components/angular-aria/angular-aria.min.js",
     "angular-file-upload": "./bower_components/ng-file-upload/ng-file-upload.js",
     "angular-moment": "./bower_components/angular-moment/angular-moment.min.js",
+    "angular-permission": "./bower_components/angular-permission/dist/angular-permission.min.js",
     "lodash": "./bower_components/lodash/lodash.js"
   },
   "devDependencies": {
