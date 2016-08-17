@@ -25,6 +25,10 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, Users, Posts, Uploa
 
 			post.image.upload.then((response) => {
 				console.log(response.data);
+			}, (err) => {
+				console.error(err);
+			}, (evt) => {
+				return post.image.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
 			});
 
 			return data;
