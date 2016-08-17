@@ -8,7 +8,7 @@ app.controller('PostEditCtrl', ($scope, $state, $stateParams, Posts) => {
 		$scope.post = {
 			title: post.name_post,
 			text: post.text_post,
-			tags: post.tag.tagname
+			tags: post.post_tags
 		};
 	}).catch((err) => {
 		console.log(err);
