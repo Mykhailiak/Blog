@@ -9,4 +9,5 @@
 				a.btn.btn-block.btn-primary(ng-class="{ 'active': !userOptions.reverse }" ng-click="setReverse(userOptions.reverse)") Reverse
 	.col-md-8.col-md-offset-1(cg-busy="usersPromise")
 		user-list(list="users" search="search" options="userOptions")
-		ul(uib-pagination total-items="totalItems" ng-model="paginationSettings.currentPage" items-per-page="paginationSettings.perPage" ng-change="paginationSettings.paginationChange()")
+		.pagin-wrapp
+			ul(uib-pagination total-items="totalItems" ng-model="paginationSettings.currentPage" items-per-page="paginationSettings.perPage" ng-change="paginationSettings.paginationChange()")

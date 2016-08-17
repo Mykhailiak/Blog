@@ -24,7 +24,7 @@ app.controller('UsersCtrl', ($scope, Users) => {
 			return this.perPage * (this.currentPage - 1);
 		},
 		paginationChange() {
-			Users.partialGet({limit: this.perPage, offset: this.offset()}).$promise.then((users) => {
+			$scope.usersPromise = Users.partialGet({limit: this.perPage, offset: this.offset()}).$promise.then((users) => {
 				$scope.users = users;
 			}).catch((err) => {
 				console.error(err);

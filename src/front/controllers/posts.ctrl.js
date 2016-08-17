@@ -23,7 +23,7 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 			return this.perPage * (this.currentPage - 1);
 		},
 		paginationChange() {
-			Posts.partialGet({limit: this.perPage, offset: this.offset()}).$promise.then((posts) => {
+			$scope.postsPromise = Posts.partialGet({limit: this.perPage, offset: this.offset()}).$promise.then((posts) => {
 				$scope.posts = posts;
 			}).catch((err) => {
 				console.error(err);
