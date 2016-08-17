@@ -12,3 +12,4 @@
 					input.form-control#searchTag(type="text" ng-model="search.post_tags" placeholder="{{'FILTER.FILTER_TAG' | translate}}")
 	.col-md-8.col-md-offset-1(cg-busy="postsPromise")
 		post-list(list="posts" search="search" options="postOptions")
+		ul(uib-pagination total-items="totalItems" ng-model="paginationSettings.currentPage" items-per-page="paginationSettings.perPage" ng-change="paginationSettings.paginationChange()")

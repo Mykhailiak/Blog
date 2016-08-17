@@ -6,6 +6,10 @@ module.factory('Comments', ($resource, backEndUrl) => {
 	}, {
 		update: {
 			method: 'PUT'
+		},
+		partialGet: {
+			method: 'OPTIONS',
+			isArray: true
 		}
 	});
 });
