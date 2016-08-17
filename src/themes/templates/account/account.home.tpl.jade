@@ -17,7 +17,7 @@
 						label(for="post-photo").wdgt-post-photo-btn: i.fa.fa-camera.fa-lg.text-info
 						input#post-photo.wdgt-post-photo-inpt(type="file" ngf-select ngf-model-invalid="errorFile" ng-model="newPost.image" name="image" accept="image/*" ngf-max-size="2MB")
 				button.btn.btn-success(translate="POST" ng-disabled="writePost.$invalid")
-			uib-progressbar(value="newPost.image.progress")
+			uib-progressbar(ng-show="newPost.image.progress >= 0" value="newPost.image.progress")
 			img.img-responsive.img-roundedpost-image-prev(ng-show="writePost.image.$valid" ngf-thumbnail="newPost.image" draggable="false")
 			div.error-box-form(ng-show="!!errorFile.$error" ng-messages="errorFile.$errorMessages")
 				p.text-danger(ng-message="maxSize" translate="FILE_LESS" translate-values="{{errorFile}}")
