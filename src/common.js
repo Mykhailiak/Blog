@@ -16,4 +16,5 @@ import 'angular-material';
 import 'angular-file-upload';
 import 'angular-moment';
 import 'angular-permission';
+import 'ng-crop-img';
 import './resources/';

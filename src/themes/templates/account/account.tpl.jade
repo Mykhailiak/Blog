@@ -9,7 +9,7 @@
 					div.col-md-9
 						a.btn.btn-info.btn-block(ui-sref=".home" translate="ACCOUNT")
 		.well
-			img.profile-image.img-circle(profile-image ng-src="{{user.user_photo}}")
+			img.profile-image.img-circle(profile-image ng-src="{{user.user_photo}}" draggable="false")
 		.well.user-widget
 			h3.text-primary: strong(ng-bind="user.user_name")
 			hr

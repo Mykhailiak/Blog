@@ -7,7 +7,8 @@ app.controller('AccountSettCtrl', ($scope, Users, $state, $stateParams) => {
 		$scope.settings = {
 			name: user.user_name,
 			email: user.user_mail,
-			password: user.user_password
+			password: user.user_password,
+			photo: user.user_photo
 		}
 	});
 

@@ -14,7 +14,8 @@ export default angular.module('app', [
 	'ngMaterial',
 	'ngFileUpload',
 	'angularMoment',
-	'permission'
+	'permission',
+	'ngImgCrop'
 	]).run(($rootScope, PermRoleStore) => {
 		$rootScope.authUser = {
 			user_role: 'ROLE_USER'

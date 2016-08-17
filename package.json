@@ -25,6 +25,7 @@
     "angular-busy.css": "./bower_components/angular-busy/angular-busy.css",
     "font-awesome.css": "./bower_components/font-awesome/css/font-awesome.min.css",
     "angular-material.css": "./bower_components/angular-material/angular-material.min.css",
+    "ng-crop-img.css": "./bower_components/ng-img-crop/compile/minified/ng-img-crop.css",
     "angular-messages": "./bower_components/angular-messages/angular-messages.min.js",
     "angular-translate": "./bower_components/angular-translate/angular-translate.min.js",
     "angular-static-loader": "./bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js",
@@ -37,6 +38,7 @@
     "angular-file-upload": "./bower_components/ng-file-upload/ng-file-upload.js",
     "angular-moment": "./bower_components/angular-moment/angular-moment.min.js",
     "angular-permission": "./bower_components/angular-permission/dist/angular-permission.min.js",
+    "ng-crop-img": "./bower_components/ng-img-crop/compile/minified/ng-img-crop.js",
     "lodash": "./bower_components/lodash/lodash.js"
   },
   "devDependencies": {

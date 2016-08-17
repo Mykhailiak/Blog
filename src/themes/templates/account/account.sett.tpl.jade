@@ -1,28 +1,44 @@
 div.col-md-9(cg-busy="accountSettingsPromise")
-	h4(translate="SETTINGS")
-	hr
-	form.account-settings(name="userSettings" novalidate ng-submit="updateUser(settings, userSettings.$valid)")
-		div.form-group
-			label.col-sm-2.control-label(for="accSettName" translate="NAME")
-			div.col-sm-10
-				input#accSettName.form-control(type="text" name="name" ng-model="settings.name" required)
-				div.error-box-form(ng-show="userSettings.name.$dirty && userSettings.name.$invalid" ng-messages="userSettings.name.$error")
-					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-					hr
-		div.form-group
-			label.col-sm-2.control-label(for="accSettEmail") Email
-			div.col-sm-10
-				input#accSettEmail.form-control(type="email" name="email" ng-model="settings.email" required)
-				div.error-box-form(ng-show="userSettings.email.$dirty && userSettings.email.$invalid" ng-messages="userSettings.email.$error")
-					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-					p.text-danger(ng-message="email" translate="WARNS.EMAIL_MESS")
-					hr
-		div.form-group
-			label.col-sm-2.control-label(for="accSettPass" translate="PASSWORD")
-			div.col-sm-10
-				input#accSettPass.form-control(type="text" name="password" minlength="3" ng-model="settings.password" required)
-				div.error-box-form(ng-show="userSettings.password.$dirty && userSettings.password.$invalid" ng-messages="userSettings.password.$error")
-					p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
-					p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{length: '3'}")
-					hr
-		button.btn.btn-primary.pull-right(translate="SAVE" ng-disabled="userSettings.$invalid")
+	.sett-acc-box
+		h4(translate="UPDATE_AVATAR")
+		hr
+		form.update-ava-prof-box(enctype="multipart/form-data" name="updateAva")
+			.update-ava-wrapp
+				.update-ava-act
+					img.profile-image-sett.img-rounded(profile-image ng-src="{{settings.photo}}" draggable="false")
+					.update-ava-meta
+						button.btn.btn-info(ngf-select ng-model="newAvatar" accept="image/*") {{'UPDATE' | translate}}
+				img.avaSetThumbnail.img-rounded(ng-src="{{croppedDataUrl}}")
+			button.save-new-photo.btn.btn-success(ng-if="!!newAvatar" translate="SAVE")
+			.cropArea(ngf-drop ng-model="newAvatar" ngf-pattern="image/*")
+				span.dropAreaTitle(translate="DROP_ZONE")
+				img-crop(image="newAvatar | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''")
+
+	.sett-acc-box
+		h4(translate="SETTINGS")
+		hr
+		form.account-settings(name="userSettings" novalidate ng-submit="updateUser(settings, userSettings.$valid)")
+			div.form-group
+				label.col-sm-2.control-label(for="accSettName" translate="NAME")
+				div.col-sm-10
+					input#accSettName.form-control(type="text" name="name" ng-model="settings.name" required)
+					div.error-box-form(ng-show="userSettings.name.$dirty && userSettings.name.$invalid" ng-messages="userSettings.name.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+						hr
+			div.form-group
+				label.col-sm-2.control-label(for="accSettEmail") Email
+				div.col-sm-10
+					input#accSettEmail.form-control(type="email" name="email" ng-model="settings.email" required)
+					div.error-box-form(ng-show="userSettings.email.$dirty && userSettings.email.$invalid" ng-messages="userSettings.email.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+						p.text-danger(ng-message="email" translate="WARNS.EMAIL_MESS")
+						hr
+			div.form-group
+				label.col-sm-2.control-label(for="accSettPass" translate="PASSWORD")
+				div.col-sm-10
+					input#accSettPass.form-control(type="text" name="password" minlength="3" ng-model="settings.password" required)
+					div.error-box-form(ng-show="userSettings.password.$dirty && userSettings.password.$invalid" ng-messages="userSettings.password.$error")
+						p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+						p.text-danger(ng-message="minlength" translate="WARNS.MIN_LENGTH" translate-values="{length: '3'}")
+						hr
+			button.btn.btn-primary.pull-right(translate="SAVE" ng-disabled="userSettings.$invalid")
