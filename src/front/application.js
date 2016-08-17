@@ -17,9 +17,9 @@ export default angular.module('app', [
 	'permission'
 	]).run(($rootScope, PermRoleStore) => {
 		$rootScope.authUser = {
-			user_role: 'ROLE_ADMIN'
+			user_role: 'ROLE_USER'
 		};
 		PermRoleStore.defineRole('ROLE_USER', (roleName, transitionProperties) => {
-			$rootScope.authUser.user_role === roleName;
+			return $rootScope.authUser.user_role === roleName;
 		});
 	});

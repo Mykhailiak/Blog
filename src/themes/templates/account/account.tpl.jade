@@ -1,6 +1,6 @@
 .row(cg-busy="accountPromise")
 	.col-md-3
-		nav.account-nav(permission permission-only="['USER']")
+		nav.account-nav(permission permission-only="['ROLE_USER']")
 			ul.list-unstyled
 				li.row
 					div.account-settings.col-md-3
@@ -20,5 +20,5 @@
 			hr
 			div.text-center
 				a(ng-href="mailto:{{user.user_mail}}" ng-bind="user.user_mail")
-		a.btn.btn-danger.btn-block(ng-click="deleteUser(user.id)" translate="DELETE_ACCOUNT" permission permission-only="['USER']")
+		a.btn.btn-danger.btn-block(ng-click="deleteUser(user.id)" translate="DELETE_ACCOUNT" permission permission-only="['ROLE_USER']")
 	ui-view
