@@ -6,7 +6,8 @@ import mapData from './../../libs/map.json';
 import loadTpl from './../../themes/templates/preloader/preloadPromise.tpl.html';
 
 app.constant('backEndUrl', data.backEndUr);
-app.constant('domainUrl', data.domain)
+app.constant('domainUrl', data.domain);
+app.constant('defaultPhotoUrl', data.defaultPhoto);
 app.value('socialSignUrl', data.socialSign);
 app.value('roles', data.ROLES);
 app.value('mapConst', mapData);
