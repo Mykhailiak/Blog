@@ -2,11 +2,6 @@ import app from './../application';
 
 
 app.controller('UsersCtrl', ($scope, Users) => {
-	$scope.usersPromise = Users.query().$promise.then((users) => {
-		$scope.totalItems = users.length;
-	}).catch((err) => {
-		console.error(err);
-	});
 
 	$scope.userOptions = {
 		orderKey: 'user_create_date',
@@ -16,6 +11,16 @@ app.controller('UsersCtrl', ($scope, Users) => {
 	$scope.setReverse = (value) => {
 		$scope.userOptions.reverse = !value;
 	};
+
+	// Pagination
+
+
+	// Get total items - requires amendments
+	$scope.usersPromise = Users.query().$promise.then((users) => {
+		$scope.totalItems = users.length;
+	}).catch((err) => {
+		console.error(err);
+	});
 
 	$scope.paginationSettings = {
 		currentPage: 1,

@@ -9,6 +9,7 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 
 	// Pagination
 
+	// Get total items - requires amendments
 	Posts.query().$promise.then((posts) => {
 		$scope.totalItems = posts.length;
 	}).catch((err) => {
