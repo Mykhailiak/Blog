@@ -9,11 +9,11 @@ div.col-md-9(cg-busy="accountSettingsPromise")
 					.update-ava-meta
 						button.btn.btn-info(ngf-select ng-model="newAvatar" accept="image/*") {{'UPDATE' | translate}}
 				img.avaSetThumbnail.img-rounded(ng-src="{{croppedDataUrl}}")
-			button.save-new-photo.btn.btn-success(ng-if="!!newAvatar" translate="SAVE" ng-click="updatePhotoAva(user.id, settings.photo, newAvatar, croppedDataUrl)")
+				button.save-new-photo.btn.btn-success.btn-block(ng-if="!!newAvatar" translate="SAVE" ng-click="updatePhotoAva(user.id, settings.photo, newAvatar, croppedDataUrl)")
+				uib-progressbar.progress-striped.active(ng-show="newAvatar.progress >= 0" value="newAvatar.progress" type="success")
 			.cropArea(ngf-drop ng-model="newAvatar" ngf-pattern="image/*")
 				span.dropAreaTitle(translate="DROP_ZONE")
 				img-crop(image="newAvatar | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''")
-
 	.sett-acc-box
 		h4(translate="SETTINGS")
 		hr
