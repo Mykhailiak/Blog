@@ -16,7 +16,7 @@ app.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 				});
 		},
 		isAuthenticated() {
-			return !!$rootScope.authUser
+			return !!$rootScope.authUser;
 		},
 		isAuthorized(authorizedRoles) {
 			if(!angular.isArray(authorizedRoles)) {

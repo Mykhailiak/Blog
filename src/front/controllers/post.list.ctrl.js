@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('PostListCtrl', ($scope, Posts, $state) => {
+app.controller('PostListCtrl', ($rootScope, $scope, Posts, $state) => {
 	$scope.deletePost = (id) => {
 		Posts.delete({id: id}).$promise.then((post) => {
 			$scope.$emit('deletePost', {
@@ -11,4 +11,6 @@ app.controller('PostListCtrl', ($scope, Posts, $state) => {
 			console.log(err);
 		});
 	};
+
+	$scope.authUser = $rootScope.authUser;
 });

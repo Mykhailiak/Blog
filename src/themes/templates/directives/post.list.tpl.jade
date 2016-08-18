@@ -3,7 +3,7 @@ ul.posts-list.list-group
 		div.panel.post-pre-panel
 			.panel-heading
 				.meta-data-panel
-					div.auth-action(uib-dropdown)
+					div.auth-action(uib-dropdown ng-if="authUser.id === post.user_post_id")
 						button.btn.btn-default(uib-dropdown-toggle)
 							i.text-muted.fa.fa-angle-down
 						ul(uib-dropdown-menu)
