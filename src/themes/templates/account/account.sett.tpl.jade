@@ -2,14 +2,14 @@ div.col-md-9(cg-busy="accountSettingsPromise")
 	.sett-acc-box
 		h4(translate="UPDATE_AVATAR")
 		hr
-		form.update-ava-prof-box(enctype="multipart/form-data" name="updateAva")
+		div.update-ava-prof-box
 			.update-ava-wrapp
 				.update-ava-act
 					img.profile-image-sett.img-rounded(profile-image ng-src="{{settings.photo}}" draggable="false")
 					.update-ava-meta
 						button.btn.btn-info(ngf-select ng-model="newAvatar" accept="image/*") {{'UPDATE' | translate}}
 				img.avaSetThumbnail.img-rounded(ng-src="{{croppedDataUrl}}")
-			button.save-new-photo.btn.btn-success(ng-if="!!newAvatar" translate="SAVE")
+			button.save-new-photo.btn.btn-success(ng-if="!!newAvatar" translate="SAVE" ng-click="updatePhotoAva(user.id, settings.photo, newAvatar, croppedDataUrl)")
 			.cropArea(ngf-drop ng-model="newAvatar" ngf-pattern="image/*")
 				span.dropAreaTitle(translate="DROP_ZONE")
 				img-crop(image="newAvatar | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''")
