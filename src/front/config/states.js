@@ -52,7 +52,13 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			url: 'account/:id',
 			controller: 'AccountCtrl',
 			template: accountTpl,
-			abstract: true
+			abstract: true,
+			data: {
+				permissions: {
+					only: 'AUTHORIZED',
+					redirectTo: 'root.signIn'
+				}
+			}
 		})
 		.state('root.account.home', {
 			url: '',
@@ -62,7 +68,13 @@ app.config(($stateProvider, $urlRouterProvider) => {
 		.state('root.account.settings', {
 			url: '/settings',
 			controller: 'AccountSettCtrl',
-			template: accountSettTpl
+			template: accountSettTpl,
+			data: {
+				permissions: {
+					only: 'canEditAccount',
+					redirectTo: 'root.home'
+				}
+			}
 		})
 		.state('root.post', {
 			url: 'post/:id',
@@ -77,7 +89,13 @@ app.config(($stateProvider, $urlRouterProvider) => {
 		.state('root.post.edit', {
 			url: '/edit',
 			controller: 'PostEditCtrl',
-			template: postEditTpl
+			template: postEditTpl,
+			data: {
+				permissions: {
+					only: 'canEditPost',
+					redirectTo: '^.view'
+				}
+			}
 		})
 		.state('root.map', {
 			url: 'map',
