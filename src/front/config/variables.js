@@ -14,6 +14,6 @@ app.value('mapConst', mapData);
 app.value('cgBusyDefaults', {
 	templateUrl: loadTpl,
 	delay: 0,
-	minDuration: 3000,
+	minDuration: 500,
 	wrapperClass: 'preloader'
 });
