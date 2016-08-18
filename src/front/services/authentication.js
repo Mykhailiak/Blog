@@ -15,6 +15,17 @@ app.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 					console.error(err);
 				});
 		},
+		logout(id) {
+			$http.get(`${backEndUrl}/user_out/${user.id}`)
+				.then((data) => {
+					console.log('Success logout');
+					localStorage.removeItem('apiKey');
+					$rootScope.authUser = null;
+				})
+				.catch((err) => {
+					console.error('Logout error: ', err);
+				});
+		},
 		isAuthenticated() {
 			return !!$rootScope.authUser;
 		},

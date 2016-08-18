@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('MainCtrl', ($scope, $translate, amMoment, backEndUrl, $rootScope) => {
+app.controller('MainCtrl', ($scope, $translate, amMoment, backEndUrl, $rootScope, AuthService) => {
 	$scope.langs = ['uk', 'en'];
 
 	$scope.activeLang = $scope.langs[0];
@@ -12,15 +12,9 @@ app.controller('MainCtrl', ($scope, $translate, amMoment, backEndUrl, $rootScope
 		amMoment.changeLocale(lang);
 	};
 
-	$scope.signOut = (user) => {
-		if(angular.isDefined(user)) {
-			$http.get(`${backEndUrl}/user_out/${user.id}`).then((data) => {
-				console.log(data);	// for uncertain answers
-				localStorage.removeItem('apiKey');
-				$rootScope.authUser = null;
-			}).catch((err) => {
-				console.error(err);
-			});
+	$scope.signOut = (id) => {
+		if(angular.isDefined(id)) {
+			AuthService.logout(id);
 		}
 	};
 });
