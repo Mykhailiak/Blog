@@ -1,4 +1,3 @@
-
 import angular from 'angular';
 
 import './../common';
@@ -15,12 +14,22 @@ export default angular.module('app', [
 	'ngFileUpload',
 	'angularMoment',
 	'permission',
+	'permission.ui',
 	'ngImgCrop'
-	]).run(($rootScope, PermRoleStore) => {
+	]).run(($rootScope, PermRoleStore, PermStateAuthorization, AuthService) => {
 		$rootScope.authUser = {
 			user_role: 'ROLE_USER'
 		};
-		PermRoleStore.defineRole('ROLE_USER', (roleName, transitionProperties) => {
-			return $rootScope.authUser.user_role === roleName;
+
+		PermRoleStore.defineManyRoles({
+			AUTHORIZED : (roleName, transitionProperties) => {
+				return AuthService.isAuthenticated();
+			},
+			ROLE_USER: (roleName, transitionProperties) => {
+				return $rootScope.authUser.user_role === roleName;
+			},
+			ROLE_ADMIN: (roleName, transitionProperties) => {
+				return $rootScope.authUser.user_role === roleName;
+			}
 		});
 	});
