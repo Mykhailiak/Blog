@@ -20,7 +20,7 @@ app.controller('AccountSettCtrl', ($scope, Users, $state, $stateParams, Upload, 
 				croppedFile: Upload.dataUrltoBlob(croppedData, newAvatar.name)
 			}
 		}).then((res) => {
-			console.log('Photo load success');
+			console.info('Photo load success');
 		}, (res) => {
 			if(res.status > 0) console.error(`Error: ${res.status}`, res.data);
 		}, (evt) => {

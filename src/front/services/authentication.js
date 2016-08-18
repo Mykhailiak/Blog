@@ -16,9 +16,9 @@ app.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 				});
 		},
 		logout(id) {
-			$http.get(`${backEndUrl}/user_out/${user.id}`)
+			$http.get(`${backEndUrl}/user_out/${id}`)
 				.then((data) => {
-					console.log('Success logout');
+					console.info('Success logout');
 					localStorage.removeItem('apiKey');
 					$rootScope.authUser = null;
 				})
