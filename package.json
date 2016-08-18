@@ -38,6 +38,7 @@
     "angular-file-upload": "./bower_components/ng-file-upload/ng-file-upload.js",
     "angular-moment": "./bower_components/angular-moment/angular-moment.min.js",
     "angular-permission": "./bower_components/angular-permission/dist/angular-permission.min.js",
+    "angular-permission-ui": "./bower_components/angular-permission/dist/angular-permission-ui.min.js",
     "ng-crop-img": "./bower_components/ng-img-crop/compile/minified/ng-img-crop.js",
     "lodash": "./bower_components/lodash/lodash.js"
   },
