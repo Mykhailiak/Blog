@@ -1,5 +1,5 @@
 .col-md-6
-	.well(permission permission-only="['ROLE_USER']")
+	.well(permission permission-only="['canVisibleInterface']")
 		form.write-post-form(name="writePost" enctype="multipart/form-data" ng-submit="createPost(newPost)" novalidate)
 			.form-group
 				input.form-control(type="text" placeholder=" {{'WRITE_POST_TITLE' | translate}} " required ng-model="newPost.title" name="title")

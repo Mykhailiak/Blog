@@ -19,6 +19,10 @@ app.run(($rootScope, PermRoleStore, PermPermissionStore, PermStateAuthorization,
 		return $rootScope.authUser.posts.indexOf(transitionProperties.toParams.id) !== -1;
 	});
 
+	PermPermissionStore.definePermission('canVisibleInterface', (permissionName, transitionProperties) => {
+		return $rootScope.authUser.id === parseInt(transitionProperties.toParams.id);
+	});
+
 	PermRoleStore.defineManyRoles({
 		AUTHORIZED : (roleName, transitionProperties) => {
 			return AuthService.isAuthenticated();
