@@ -1,7 +1,8 @@
 {
 	"SIGN": {
 		"SIGN_IN": "Sign in",
-		"SIGN_UP": "Sign up"
+		"SIGN_UP": "Sign up",
+		"SIGN_OUT": "Sign out"
 	},
 	"WARNS": {
 		"REQUIRED_MESS": "This field is required",

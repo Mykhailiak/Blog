@@ -4,10 +4,12 @@
 			img(src='/images/airplane.svg', alt='')
 			h2 AirBlog
 		ul.list-inline(translate-namespace="SIGN")
-			li
+			li(permission permission-except="['AUTHORIZED']")
 				a.btn.btn-info(href='', ui-sref='root.signIn', translate=".SIGN_IN")
-			li
+			li(permission permission-except="['AUTHORIZED']")
 				a.btn.btn-info(href='', ui-sref='root.signUp', translate=".SIGN_UP")
+			li(permission permission-only="['AUTHORIZED']")
+				a.btn.btn-info(href='', ng-click="signOut(authUser.id)", translate=".SIGN_OUT")
 	hr
 	nav.main-nav
 		ul.nav.nav-pills(translate-namespace="NAVIGATION")
