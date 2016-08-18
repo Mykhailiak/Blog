@@ -21,6 +21,9 @@ app.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 					console.info('Success logout');
 					localStorage.removeItem('apiKey');
 					$rootScope.authUser = null;
+					$rootScope.$broadcast('logout', {
+						data
+					});
 				})
 				.catch((err) => {
 					console.error('Logout error: ', err);
