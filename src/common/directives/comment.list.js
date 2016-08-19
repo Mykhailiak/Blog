@@ -1,9 +1,9 @@
-import app from './../application';
+import module from './module';
 
 import commentTpl from './../../themes/templates/directives/comment.list.tpl.jade';
 
 
-app.directive('commentList', () => {
+module.directive('commentList', () => {
 	return {
 		restrict: 'E',
 		template: commentTpl,

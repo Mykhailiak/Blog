@@ -1,9 +1,9 @@
-import app from './../application';
+import module from './module';
 
 import iconSelectTpl from './../../themes/templates/directives/icon.select.tpl.jade';
 
 
-app.directive('iconSelect', () => {
+module.directive('iconSelect', () => {
 	return {
 		restrict: 'E',
 		scope: {

@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './module';
 
 
-app.directive('profileImage', ($http, defaultPhotoUrl) => {
+module.directive('profileImage', ($http, defaultPhotoUrl) => {
 	return {
 		restrict: 'A',
 		link(scope, element, attr) {

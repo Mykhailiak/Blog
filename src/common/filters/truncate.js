@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './module';
 
 
-app.filter('truncate', ($filter) => {
+module.filter('truncate', ($filter) => {
 	return (str, length) => {
 		if(angular.isNumber(length) && angular.isString(str)) {
 			if(str.length > length) {

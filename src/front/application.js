@@ -3,6 +3,7 @@ import angular from 'angular';
 import './../common';
 
 export default angular.module('app', [
+	'common',
 	'ui.router',
 	'app.resources',
 	'cgBusy',

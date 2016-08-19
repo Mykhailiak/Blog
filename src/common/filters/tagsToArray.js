@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './module';
 
 
-app.filter('tagsToArray', () => {
+module.filter('tagsToArray', () => {
 	return (value) => {
 		if(angular.isString(value)) {
 			return value.split(',');
