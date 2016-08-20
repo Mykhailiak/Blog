@@ -44,6 +44,9 @@ module.exports = {
 		];
 	},
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'common'
+		}),
 		new ExtractTextPlugin('styles.css', {allChunks: true}),
 		new webpack.DefinePlugin({
 			NODE_ENV: JSON.stringify(NODE_ENV),
