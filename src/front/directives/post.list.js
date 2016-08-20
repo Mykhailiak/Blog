@@ -1,9 +1,9 @@
-import module from './module';
+import app from './../application';
 
 import postListTpl from './../../themes/templates/directives/post.list.tpl.jade';
 
 
-module.directive('postList', () => {
+app.directive('postList', () => {
 	return {
 		restrict: 'E',
 		template: postListTpl,

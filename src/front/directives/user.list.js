@@ -1,9 +1,9 @@
-import module from './module';
+import app from './../application';
 
 import userListTpl from './../../themes/templates/directives/user.list.tpl.jade';
 
 
-module.directive('userList', () => {
+app.directive('userList', () => {
 	return {
 		restrict: 'E',
 		template: userListTpl,
