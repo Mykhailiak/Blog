@@ -31,12 +31,24 @@ app.config(($stateProvider, $urlRouterProvider) => {
 		.state('root.signUp', {
 			url: 'signUp',
 			controller: 'SignUpCtrl',
-			template: signUpTpl
+			template: signUpTpl,
+			data: {
+				permissions: {
+					except: ['AUTHORIZED'],
+					redirectTo: 'root.home'
+				}
+			}
 		})
 		.state('root.signIn', {
 			url: 'signIn',
 			controller: 'SignInCtrl',
-			template: signInTpl
+			template: signInTpl,
+			data: {
+				permissions: {
+					except: ['AUTHORIZED'],
+					redirectTo: 'root.home'
+				}
+			}
 		})
 		.state('root.users', {
 			url: 'users',
@@ -55,7 +67,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			abstract: true,
 			data: {
 				permissions: {
-					only: 'AUTHORIZED',
+					only: ['AUTHORIZED'],
 					redirectTo: 'root.signIn'
 				}
 			}
@@ -71,7 +83,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			template: accountSettTpl,
 			data: {
 				permissions: {
-					only: 'canEditAccount',
+					only: ['canEditAccount'],
 					redirectTo: 'root.home'
 				}
 			}
@@ -92,7 +104,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
 			template: postEditTpl,
 			data: {
 				permissions: {
-					only: 'canEditPost',
+					only: ['canEditPost'],
 					redirectTo: '^.view'
 				}
 			}
