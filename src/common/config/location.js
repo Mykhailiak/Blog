@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './../module';
 
 
-app.config(($locationProvider) => {
+module.config(($locationProvider) => {
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false

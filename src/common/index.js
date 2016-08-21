@@ -1,4 +1,3 @@
 import './directives/';
 import './filters/';
-
-import './module';
+import './config/';

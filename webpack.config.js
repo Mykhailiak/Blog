@@ -60,9 +60,9 @@ module.exports = {
 		}),
 		new webpack.NoErrorsPlugin(),
 		new WebpackBuildNotifierPlugin(),
-		new LiverReloadPlugin({
-			port: 8080
-		})
+		// new LiverReloadPlugin({
+		// 	port: 8080
+		// })
 	],
 	devtool: NODE_ENV === 'development' ? 'source-map' : null,
 	noParse: [

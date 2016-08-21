@@ -1,4 +1,4 @@
-import module from './module';
+import module from './../module';
 
 import iconSelectTpl from './../../themes/templates/directives/icon.select.tpl.jade';
 

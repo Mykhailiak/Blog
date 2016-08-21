@@ -1,6 +1,6 @@
-import app from './../application';
+import module from './../module';
 
-app.config(($translateProvider) => {
+module.config(($translateProvider) => {
 
 	$translateProvider.useStaticFilesLoader({
 		prefix: '/languages/lang-',

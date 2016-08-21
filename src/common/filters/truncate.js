@@ -1,4 +1,4 @@
-import module from './module';
+import module from './../module';
 
 
 module.filter('truncate', ($filter) => {
