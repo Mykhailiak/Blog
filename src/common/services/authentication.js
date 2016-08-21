@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './../module';
 
 
-app.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
+module.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 	return {
 		login(credentials) {
 			return $http.post(`${domainUrl}/authorization`, credentials)

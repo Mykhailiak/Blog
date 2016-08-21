@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './../module';
 
 
-app.factory('httpRequestInterceptor', () => {
+module.factory('httpRequestInterceptor', () => {
 	return {
 		request(config) {
 			let apiKey = localStorage.getItem('apiKey');
