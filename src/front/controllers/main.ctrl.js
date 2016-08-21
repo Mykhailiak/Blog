@@ -13,7 +13,9 @@ app.controller('MainCtrl', ($scope, $translate, $state, amMoment, backEndUrl, $r
 	};
 
 	$scope.$on('logout', (e, args) => {
-		$state.reload(true);
+		$state.go('root.home', {}, {
+			reload: true
+		});
 	});
 
 	$scope.signOut = (id) => {
