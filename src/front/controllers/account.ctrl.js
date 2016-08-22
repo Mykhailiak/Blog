@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts, Upload, backEndUrl) => {
+app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts, Upload, backEndUrl, domainUrl) => {
 	$scope.accountPromise = Users.get({id: $stateParams.id}).$promise.then((user) => {
 		$scope.user = user;
 		console.log(user);
@@ -23,7 +23,7 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts
 			post_tags: post.tags
 		}).$promise.then((data) => {
 			post.image.upload = Upload.upload({
-				url: `http://localhost:9000/upload_file/${data.id}`,
+				url: `${domainUrl}/upload_file/${data.id}`,
 				data: {
 					image: post.image
 				}
