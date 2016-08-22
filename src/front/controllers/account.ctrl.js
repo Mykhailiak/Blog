@@ -1,10 +1,16 @@
 import app from './../application';
 
 
-app.controller('AccountCtrl', ($scope, $state, $stateParams, Users, Posts, Upload, backEndUrl) => {
+app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts, Upload, backEndUrl) => {
 	$scope.accountPromise = Users.get({id: $stateParams.id}).$promise.then((user) => {
 		$scope.user = user;
 		console.log(user);
+	}).catch((err) => {
+		console.error(err);
+	});
+
+	$scope.postPromise = $http.get(`${backEndUrl}/user_post/${$stateParams.id}`).then((userData) => {
+		$scope.posts = userData.data.posts;
 	}).catch((err) => {
 		console.error(err);
 	});

@@ -21,8 +21,8 @@
 			img.img-responsive.img-roundedpost-image-prev(ng-show="writePost.image.$valid" ngf-thumbnail="newPost.image" draggable="false")
 			div.error-box-form(ng-show="!!errorFile.$error" ng-messages="errorFile.$errorMessages")
 				p.text-danger(ng-message="maxSize" translate="FILE_LESS" translate-values="{{errorFile}}")
-	div(cg-busy="newPostPromise")
-		post-list(list="user.posts" search="search" options="postOptions")
+	div(cg-busy="postPromise")
+		post-list(list="posts" search="search" options="postOptions")
 .col-md-3
 	.well
 		h4(translate="SEARCH")
