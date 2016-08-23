@@ -4,15 +4,15 @@ import app from './../application';
 app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts, Upload, backEndUrl, domainUrl) => {
 	$scope.accountPromise = Users.get({id: $stateParams.id}).$promise.then((user) => {
 		$scope.user = user;
-		console.log(user);
+		console.log('User', user);
 	}).catch((err) => {
-		console.error(err);
+		console.error('Users get', err);
 	});
 
 	$scope.postPromise = $http.get(`${backEndUrl}/user_post/${$stateParams.id}`).then((userData) => {
 		$scope.posts = userData.data.posts;
 	}).catch((err) => {
-		console.error(err);
+		console.error('User post', err);
 	});
 
 
@@ -30,9 +30,9 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts
 			});
 
 			post.image.upload.then((response) => {
-				console.log(response.data);
+				console.info('Image response', response.data);
 			}, (err) => {
-				console.error(err);
+				console.error('Image response', err);
 			}, (evt) => {
 				return post.image.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
 			});
@@ -40,11 +40,11 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts
 			return data;
 
 		}).then((post) => {
-			console.log(post);
+			console.info('Create post', post);
 			$scope.user.posts.push(post);
 			$scope.$broadcast('formPristine');
 		}).catch((err) => {
-			console.error(err);
+			console.error('Create post', err);
 		});
 	};
 
@@ -52,7 +52,7 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts
 		Users.delete({id: id}).$promise.then((data) => {
 			$state.go('root.home');
 		}).catch((err) => {
-			console.log(err);
+			console.error('Delete user', err);
 		});
 	};
 

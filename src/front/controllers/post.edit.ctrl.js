@@ -11,7 +11,7 @@ app.controller('PostEditCtrl', ($scope, $state, $stateParams, Posts) => {
 			tags: post.post_tags
 		};
 	}).catch((err) => {
-		console.log(err);
+		console.error('Get post', err);
 	});
 
 	$scope.editPost = (data, status) => {
@@ -23,7 +23,7 @@ app.controller('PostEditCtrl', ($scope, $state, $stateParams, Posts) => {
 			}).$promise.then((post) => {
 				$state.go('^.view');
 			}).catch((err) => {
-				console.error(err);
+				console.error('Edit post', err);
 			});
 		}
 	};

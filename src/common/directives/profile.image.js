@@ -8,7 +8,7 @@ module.directive('profileImage', ($http, defaultPhotoUrl) => {
 			if(angular.isDefined(attr['ngSrc']) && !!attr['ngSrc']) {
 				attr.$observe('ngSrc', (src) => {
 					$http.get(src).then(() => {
-						console.log('Profile: Photo exist');
+						console.info('Profile: Photo exist');
 					}).catch((err) => {
 						console.warn('Profile: Photo doesn\'t exist');
 						element.attr('src', defaultPhotoUrl);

@@ -8,7 +8,7 @@ app.controller('PostListCtrl', ($rootScope, $scope, Posts, $state) => {
 				post
 			});
 		}).catch((err) => {
-			console.log(err);
+			console.log('Delete post', err);
 		});
 	};
 

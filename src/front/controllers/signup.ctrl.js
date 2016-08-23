@@ -11,9 +11,9 @@ app.controller('SignUpCtrl', ($scope, Users, $state, roles) => {
 				user_password: newUser.password,
 				role: roles.user
 			}).$promise.then((res) => {
-				console.log(res);
+				console.info('User create', res);
 			}).catch((err) => {
-				console.error(err);
+				console.error('User error', err);
 			});
 		}
 	};

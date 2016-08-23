@@ -4,7 +4,7 @@ import app from './../application';
 app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) => {
 	$scope.postsPromise = Posts.get({id: $stateParams.id}).$promise.then((data) => {
 		$scope.post = data;
-		console.log(data);
+		console.log('Post', data);
 	}).catch((err) => {
 		console.error(err);
 	});
@@ -13,7 +13,7 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 		Posts.delete({id: id}).$promise.then((data) => {
 			$state.go('root.home');
 		}).catch((err) => {
-			console.log(err);
+			console.error('Delete post', err);
 		});
 	};
 
@@ -32,7 +32,7 @@ app.controller('PostViewCtrl', ($scope, Posts, Comments, $stateParams, $state) =
 			$scope.comment = {};
 			$scope.writeComment.$setPristine();
 		}).catch((err) => {
-			console.error(err);
+			console.error('Create comment', err);
 		});
 	};
 });
