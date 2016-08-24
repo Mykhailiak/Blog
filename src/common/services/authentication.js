@@ -8,6 +8,7 @@ module.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 				.then((data) => {
 					$rootScope.authUser = data;
 					localStorage.setItem('apiKey', data.apiKey);
+					sessionStorage.setItem('user', data);
 
 					return data;
 				})
