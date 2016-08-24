@@ -42,9 +42,15 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts
 			return data;
 
 		}).then((post) => {
+			if(post.user_post_id !== parseInt($stateParams.id)) {
+				return Promise.reject('Unauthorized attempts');
+			}
+
 			console.info('Create post', post);
+
 			$scope.posts.push(post);
 			$scope.$broadcast('formPristine');
+
 		}).catch((err) => {
 			console.error('Create post', err);
 		});
