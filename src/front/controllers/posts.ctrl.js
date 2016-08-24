@@ -9,7 +9,6 @@ app.controller('PostsCtrl', ($scope, $http, Posts, backEndUrl) => {
 
 	// Pagination
 
-	// Get total items - requires amendments
 	$http.get(`${backEndUrl}/length`).then((length) => {
 		$scope.totalItems = parseFloat(length.data.posts);
 	}).catch((err) => {
