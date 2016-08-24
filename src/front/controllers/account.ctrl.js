@@ -17,31 +17,33 @@ app.controller('AccountCtrl', ($scope, $state, $stateParams, $http, Users, Posts
 
 
 	$scope.createPost = (post) => {
-		$scope.newPostPromise = Posts.save({
+		$scope.postPromise = Posts.save({
 			post_name: post.title,
 			post_text: post.text,
 			post_tags: post.tags
 		}).$promise.then((data) => {
-			post.image.upload = Upload.upload({
-				url: `${domainUrl}/upload_file/${data.id}`,
-				data: {
-					image: post.image
-				}
-			});
+			if(angular.isDefined(post.image)) {
+				post.image.upload = Upload.upload({
+					url: `${domainUrl}/upload_file/${data.id}`,
+					data: {
+						image: post.image
+					}
+				});
 
-			post.image.upload.then((response) => {
-				console.info('Image response', response.data);
-			}, (err) => {
-				console.error('Image response', err);
-			}, (evt) => {
-				return post.image.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-			});
+				post.image.upload.then((response) => {
+					console.info('Image response', response.data);
+				}, (err) => {
+					console.error('Image response', err);
+				}, (evt) => {
+					return post.image.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+				});
+			}
 
 			return data;
 
 		}).then((post) => {
 			console.info('Create post', post);
-			$scope.user.posts.push(post);
+			$scope.posts.push(post);
 			$scope.$broadcast('formPristine');
 		}).catch((err) => {
 			console.error('Create post', err);

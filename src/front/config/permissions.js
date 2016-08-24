@@ -4,7 +4,7 @@ import app from './../application';
 app.run(($rootScope, PermRoleStore, PermPermissionStore, PermStateAuthorization, AuthService) => {
 	$rootScope.authUser = {
 		user_role: 'ROLE_USER',
-		id: 53
+		id: 47
 	};
 
 	$rootScope.$on('$stateChangePermissionDenied', (e, toState, toParams, options) => {
