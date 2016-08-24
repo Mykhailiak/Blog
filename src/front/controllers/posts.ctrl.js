@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('PostsCtrl', ($scope, Posts) => {
+app.controller('PostsCtrl', ($scope, $http, Posts, backEndUrl) => {
 	$scope.postOptions = {
 		orderKey: 'date_post',
 		reverse: true
@@ -10,10 +10,10 @@ app.controller('PostsCtrl', ($scope, Posts) => {
 	// Pagination
 
 	// Get total items - requires amendments
-	Posts.query().$promise.then((posts) => {
-		$scope.totalItems = posts.length;
+	$http.get(`${backEndUrl}/length`).then((length) => {
+		$scope.totalItems = parseFloat(length.data.posts);
 	}).catch((err) => {
-		console.error(err);
+		console.error('Get legnth of data', err);
 	});
 
 

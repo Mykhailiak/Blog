@@ -1,7 +1,7 @@
 import app from './../application';
 
 
-app.controller('UsersCtrl', ($scope, Users) => {
+app.controller('UsersCtrl', ($scope, $http, Users, backEndUrl) => {
 
 	$scope.userOptions = {
 		orderKey: 'user_create_date',
@@ -14,12 +14,10 @@ app.controller('UsersCtrl', ($scope, Users) => {
 
 	// Pagination
 
-
-	// Get total items - requires amendments
-	$scope.usersPromise = Users.query().$promise.then((users) => {
-		$scope.totalItems = users.length;
+	$http.get(`${backEndUrl}/length`).then((length) => {
+		$scope.totalItems = parseFloat(length.data.users);
 	}).catch((err) => {
-		console.error(err);
+		console.error('Get legnth of data', err);
 	});
 
 	$scope.paginationSettings = {
