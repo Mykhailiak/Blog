@@ -4,6 +4,7 @@
 			img(src='/images/airplane.svg', alt='')
 			h2 AirBlog
 		ul.list-inline(translate-namespace="SIGN")
+			li(permission persmission-only="['ROLE_ADMIN']"): a(href="/admin.html", target="_self" translate="ADMIN")
 			li(permission permission-except="['AUTHORIZED']")
 				a.btn.btn-info(href='', ui-sref='root.signIn', translate=".SIGN_IN")
 			li(permission permission-except="['AUTHORIZED']")
