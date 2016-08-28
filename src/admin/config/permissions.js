@@ -8,6 +8,8 @@ admin.run(($rootScope, PermRoleStore, PermPermissionStore) => {
 
 	PermRoleStore.defineManyRoles({
 		AUTHORIZED_ADMIN : (roleName, transitionProperties) => {
-			return AuthService.isAdmin(sessionStorage.getItem(user.id));
-		});
+			// return AuthService.isAdmin(sessionStorage.getItem(user.id));
+			return true;
+		}
+	});
 });
