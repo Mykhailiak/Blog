@@ -10,6 +10,7 @@
 		"EMAIL_MESS": "This field should be an e-mail"
 	},
 	"SEARCH": "Search",
+	"NAVIGATION_TITLE": "Navigation",
 	"NAVIGATION": {
 		"HOME": "Home",
 		"USERS": "Users",

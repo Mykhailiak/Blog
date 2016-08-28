@@ -10,6 +10,7 @@
 		"EMAIL_MESS": "Це поле має бути email'ом"
 	},
 	"SEARCH": "Пошук",
+	"NAVIGATION_TITLE": "Навігація",
 	"NAVIGATION": {
 		"HOME": "Дім",
 		"USERS": "Користувачі",
