@@ -3,16 +3,16 @@
 		a.logo(href='', ui-sref='admin.wellcome')
 			img(src='/images/airplane.svg', alt='')
 			h2 AirBlog
-				sub Admin panel
+				sub.sub-status-logo Admin panel
 		ul.list-inline(translate-namespace="SIGN")
 			li
 				a.btn.btn-info(persmission permission-only="['AUTHORIZED_ADMIN']" href='', ng-click="signOut(authUser.id)", translate=".SIGN_OUT")
-	hr
 	div.row
 		.col-md-3
-			h4.text-info(translate="NAVIGATION_TITLE")
-			nav.main-nav
-				//- ul.nav.nav-pills(translate-namespace="NAVIGATION")
+			nav.list-group(translate-namespace="NAVIGATION")
+				a.list-group-item.list-group-item-action(ui-sref="" translate=".HOME")
+				a.list-group-item.list-group-item-action(ui-sref="" translate=".USERS")
+				a.list-group-item.list-group-item-action(ui-sref="" translate=".POSTS")
 				//- select.form-control.lang-swtch(ng-options="lang for lang in langs", ng-model="activeLang" ng-change="updateLang(activeLang)")
 		.col-md-9
 			ui-view
