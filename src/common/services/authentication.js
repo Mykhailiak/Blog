@@ -30,6 +30,11 @@ module.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 					console.error('Logout error: ', err);
 				});
 		},
+		isAdmin(id) {
+			return $http.get(id).then((res) => {
+				return res;
+			});
+		},
 		isAuthenticated() {
 			return !!$rootScope.authUser;
 		},
