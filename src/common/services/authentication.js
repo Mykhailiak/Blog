@@ -31,7 +31,7 @@ module.factory('AuthService', ($rootScope, $http, backEndUrl, domainUrl) => {
 				});
 		},
 		isAdmin(id) {
-			return $http.get(id).then((res) => {
+			return $http.get(`${backEndUrl}/checkStatus/${id}`).then((res) => {
 				return res;
 			});
 		},
