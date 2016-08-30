@@ -1,17 +1,17 @@
 .container
 	header.main-header.page-header
-		a.logo(href='', ui-sref='admin.wellcome')
+		a.logo(href='', ui-sref='.wellcome')
 			img(src='/images/airplane.svg', alt='')
 			h2 AirBlog
 				sub.sub-status-logo Admin panel
 		ul.list-inline(translate-namespace="SIGN")
 			li
-				a.btn.btn-info(persmission permission-only="['AUTHORIZED_ADMIN']" href='', ng-click="signOut(authUser.id)", translate=".SIGN_OUT")
+				a.btn.btn-info(persmission permission-only="['AUTHORIZED_ADMIN']" ng-click="signOut(authUser.id)", translate=".SIGN_OUT")
 	div.row
 		.col-md-3
 			nav.list-group(translate-namespace="NAVIGATION")
-				a.list-group-item.list-group-item-action(ui-sref="" translate=".HOME")
-				a.list-group-item.list-group-item-action(ui-sref="" translate=".USERS")
+				a.list-group-item.list-group-item-action(ui-sref=".wellcome" translate=".HOME")
+				a.list-group-item.list-group-item-action(ui-sref=".users" translate=".USERS")
 				a.list-group-item.list-group-item-action(ui-sref="" translate=".POSTS")
 				//- select.form-control.lang-swtch(ng-options="lang for lang in langs", ng-model="activeLang" ng-change="updateLang(activeLang)")
 		.col-md-9
