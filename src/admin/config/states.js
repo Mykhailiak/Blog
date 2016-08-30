@@ -31,6 +31,6 @@ admin.config(($stateProvider, $urlRouterProvider) => {
 		.state('admin.users', {
 			url: 'users',
 			controller: 'AdminUsersCtrl',
-			template: usersTpl,
+			template: usersTpl
 		})
 });

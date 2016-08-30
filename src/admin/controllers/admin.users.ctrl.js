@@ -2,7 +2,7 @@ import admin from './../admin';
 
 
 admin.controller('AdminUsersCtrl', ($scope, Users) => {
-    Users.query().$promise.then((users) => {
+    $scope.usersPromise = Users.query().$promise.then((users) => {
       $scope.users = users;
       console.log(users);
     }).catch((err) => {

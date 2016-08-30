@@ -1,0 +1,16 @@
+div.table-responsive(cg-busy="usersPromise")
+  table.table.table-striped
+    thead
+      tr
+        td #
+        td Name
+        td Role
+        td Status
+        td Created at
+    tbody
+      tr(ng-repeat="user in users")
+        td(ng-bind="$index")
+        td(ng-bind="user.user_name")
+        td(ng-bind="user.user_role")
+        td(ng-bind="user.user_active")
+        td(ng-bind="user.user_create_date | amDateFormat : 'D MMMM, YYYY'")
