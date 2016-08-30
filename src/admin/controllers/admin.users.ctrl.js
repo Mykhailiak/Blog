@@ -8,4 +8,13 @@ admin.controller('AdminUsersCtrl', ($scope, Users) => {
     }).catch((err) => {
       console.error('Users error:', err);
     });
+
+    $scope.deleteUser = (user, id) => {
+      Users.delete({id: id}).$promise.then((data) => {
+        $scope.users.splice($scope.users.indexOf(user), 1);
+      }).catch((err) => {
+        console.error('Delete user', err);
+      });
+    };
+
 });

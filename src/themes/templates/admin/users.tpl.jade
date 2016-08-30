@@ -14,3 +14,11 @@ div.table-responsive(cg-busy="usersPromise")
         td(ng-bind="user.user_role | role")
         td(ng-bind="user.user_active")
         td(ng-bind="user.user_create_date | amDateFormat : 'D MMMM, YYYY'")
+        td.text-right
+          ul.list-inline
+            li
+              button.btn.btn-info
+                i.fa.fa-edit
+            li
+              button.btn.btn-danger(ng-click="deleteUser(user.id)")
+                i.fa.fa-times
