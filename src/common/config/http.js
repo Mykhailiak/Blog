@@ -1,7 +1,7 @@
-import app from './../application';
+import module from './../module';
 
 
-app.config(($httpProvider) => {
+module.config(($httpProvider) => {
 
 	delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
