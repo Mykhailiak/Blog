@@ -12,7 +12,15 @@ admin.config(($stateProvider, $urlRouterProvider) => {
 			url: '/',
 			controller: 'AdminCtrl',
 			template: adminTpl,
-			abstract: true
+			abstract: true,
+			data: {
+				permissions: {
+					only: ['AUTHORIZED_ADMIN'],
+					redirectTo() {
+						window.location.reload();
+					}
+				}
+			}
 		})
 		.state('admin.welcome', {
 			url: '',
