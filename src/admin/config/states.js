@@ -4,6 +4,7 @@ import admin from './../admin';
 import adminTpl from './../../themes/templates/admin/admin.tpl.jade';
 import adminWellcomeTpl from './../../themes/templates/admin/admin.wellcome.tpl.jade';
 import usersTpl from './../../themes/templates/admin/users.tpl.jade';
+import postsTpl from './../../themes/templates/admin/posts.tpl.jade';
 
 admin.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
@@ -32,5 +33,10 @@ admin.config(($stateProvider, $urlRouterProvider) => {
 			url: 'users',
 			controller: 'AdminUsersCtrl',
 			template: usersTpl
+		})
+		.state('admin.posts', {
+			url: 'posts',
+			controller: 'AdminPostsCtrl',
+			template: postsTpl
 		})
 });
