@@ -2,7 +2,22 @@ div.table-responsive(cg-busy="postsPromise")
 	table.table.table-striped
 		thead
 			tr
-				td
+				td #
+				td Title
+				td Author
+				td Created
+
 		tbody
 			tr(ng-repeat="post in posts")
-				td
+				td(ng-bind="$index")
+				td(ng-bind="post.name_post")
+				td(ng-bind="post.author_post")
+				td(ng-bind="post.data_post | amDateFormat : 'D MMMM, YYYY'")
+				td.text-right
+					ul.list-inline
+						li
+							button.btn.btn-info
+								i.fa.fa-edit
+						li
+							button.btn.btn-danger(ng-click="deletePost(post, post.id)")
+								i.fa.fa-times
