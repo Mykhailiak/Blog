@@ -17,7 +17,7 @@ div.table-responsive(cg-busy="usersPromise")
 				td.text-right
 					ul.list-inline
 						li
-							button.btn.btn-info
+							a.btn.btn-info(ui-sref="^.userEdit({id: user.id})")
 								i.fa.fa-edit
 						li
 							button.btn.btn-danger(ng-click="deleteUser(user, user.id)")
