@@ -37,7 +37,7 @@ admin.config(($stateProvider, $urlRouterProvider) => {
 		})
 		.state('admin.userEdit', {
 			url: 'user/:id/edit',
-			controlelr: 'AdminUserEditCtrl',
+			controller: 'AdminUserEditCtrl',
 			template: userEditTpl
 		})
 		.state('admin.posts', {

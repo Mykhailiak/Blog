@@ -1,1 +1,31 @@
-h1 User edit tpl
+div.user-edit-wrapp(cg-busy="userPromise")
+	h2.text-info User edit
+	hr
+	form(ng-submit="editUser(user)" name="editUserForm" novalidate)
+		.form-group
+			label Name
+			input.form-control(type="text" name="name" ng-model="user.user_name" required)
+			div.error-box-form(ng-show="editUserForm.name.$dirty && editUserForm.name.$invalid" ng-messages="editUserForm.name.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				hr
+		.form-group
+			label Created
+			input.form-control(type="text" name="created" ng-model="user.user_create_date" value="{{user.user_create_date}}" required)
+			div.error-box-form(ng-show="editUserForm.created.$dirty && editUserForm.created.$invalid" ng-messages="editUserForm.created.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				hr
+		.form-group
+			label Email
+			input.form-control(type="email" name="email" ng-model="user.user_mail" required)
+			div.error-box-form(ng-show="editUserForm.email.$dirty && editUserForm.email.$invalid" ng-messages="editUserForm.email.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				p.text-danger(ng-message="email" translate="WARNS.EMAIL_MESS")
+				hr
+		.form-group
+			label Role
+			select.form-control(ng-model="user.user_role" name="role" ng-options="role for role in roles" required)
+			div.error-box-form(ng-show="editUserForm.role.$dirty && editUserForm.role.$invalid" ng-messages="editUserForm.role.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				hr
+		button.btn.btn-info(ng-disabled="editUserForm.$invalid") Save
+
