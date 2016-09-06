@@ -6,6 +6,8 @@ import adminWellcomeTpl from './../../themes/templates/admin/admin.wellcome.tpl.
 import usersTpl from './../../themes/templates/admin/users.tpl.jade';
 import postsTpl from './../../themes/templates/admin/posts.tpl.jade';
 import userEditTpl from './../../themes/templates/admin/user.edit.tpl.jade';
+import postEditTpl from './../../themes/templates/admin/post.edit.tpl.jade';
+
 
 admin.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
@@ -44,5 +46,10 @@ admin.config(($stateProvider, $urlRouterProvider) => {
 			url: 'posts',
 			controller: 'AdminPostsCtrl',
 			template: postsTpl
+		})
+		.state('admin.postEdit', {
+			url: 'post/:id/edit',
+			controller: 'AdminPostEditCtrl',
+			template: postEditTpl
 		})
 });
