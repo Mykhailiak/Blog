@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=development webpack --watch",
     "production": "NODE_ENV=production webpack",
-    "server": "webpack-dev-server --content-base public -ebug --output-pathinfo --colors --devtool source-map --port 5001",
+    "server": "webpack-dev-server --content-base public -ebug --output-pathinfo --colors --devtool source-map --port 5001 --hot --inline",
     "clearBuild": "NODE_ENV=cleanBuild webpack --watch"
   },
   "author": "",
