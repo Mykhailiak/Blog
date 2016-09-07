@@ -26,7 +26,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'ng-annotate!babel?presets[]=es2015'},
+			{test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'ng-annotate!babel'},
 			{test: /\.html$/, loader: 'ngtemplate!html'},
 			{test: /\.jade$/, loader: 'jade'},
 			{test: /(\.css|-css)$/, loader: ExtractTextPlugin.extract('style', 'css!postcss')},
