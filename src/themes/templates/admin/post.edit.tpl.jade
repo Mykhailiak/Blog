@@ -1,1 +1,18 @@
-h1 {{title}}
+div.post-edit-wrapp(cg-busy="postPromise")
+	h2.text-info Post edit
+	hr
+	form(ng-submit="editPost(post)" name="editPostForm" novalidate)
+		.form-group
+			label Author
+			input.form-control(readonly type="text" ng-model="post.author_post")
+		.form-group
+			label Name
+			input.form-control(type="text" ng-model="post.name_post" placeholder="Name")
+		.form-group
+			label Text
+			textarea.form-control(ng-model="post.text_post" placeholder="Text")
+		.form-group
+			label Tags
+			input.form-control(type="text" ng-model="post.post_tags")
+		button.btn.btn-success(translate="SAVE")
+

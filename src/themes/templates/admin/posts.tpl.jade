@@ -16,7 +16,7 @@ div.table-responsive(cg-busy="postsPromise")
 				td.text-right
 					ul.list-inline
 						li
-							a(ui-sref=".postEdit({id: post.id})").btn.btn-info
+							a(ui-sref="^.postEdit({id: post.id})").btn.btn-info
 								i.fa.fa-edit
 						li
 							button.btn.btn-danger(ng-click="deletePost(post, post.id)")
