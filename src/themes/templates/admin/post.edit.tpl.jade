@@ -4,15 +4,24 @@ div.post-edit-wrapp(cg-busy="postPromise")
 	form(ng-submit="editPost(post)" name="editPostForm" novalidate)
 		.form-group
 			label Author
-			input.form-control(readonly type="text" ng-model="post.author_post")
+			input.form-control(readonly type="text" name="author" ng-model="post.author_post" required)
+			div.error-box-form(ng-show="editPostForm.author.$dirty && editPostForm.author.$invalid" ng-messages="editPostForm.author.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				hr
 		.form-group
 			label Name
-			input.form-control(type="text" ng-model="post.name_post" placeholder="Name")
+			input.form-control(type="text" name="name" ng-model="post.name_post" placeholder="Name" required)
+			div.error-box-form(ng-show="editPostForm.name.$dirty && editPostForm.name.$invalid" ng-messages="editPostForm.name.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				hr
 		.form-group
 			label Text
-			textarea.form-control(ng-model="post.text_post" placeholder="Text")
+			textarea.form-control(ng-model="post.text_post" name="text" placeholder="Text" required)
+			div.error-box-form(ng-show="editPostForm.text.$dirty && editPostForm.text.$invalid" ng-messages="editPostForm.text.$error")
+				p.text-danger(ng-message="required" translate="WARNS.REQUIRED_MESS")
+				hr
 		.form-group
 			label Tags
 			input.form-control(type="text" ng-model="post.post_tags")
-		button.btn.btn-success(translate="SAVE")
+		button.btn.btn-success(translate="SAVE" ng-disabled="editPostForm.$invalid")
 
